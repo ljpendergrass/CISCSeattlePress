@@ -21,13 +21,15 @@
 // Third-party libraries
 @import 'font-awesome';
 @import 'motion-ui';
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
 
 // Foundation global styles
 @include foundation-global-styles;
 
 // Individual foundation components
-@include foundation-grid;
-// @include foundation-flex-grid;
+// @include foundation-grid;
+@include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-forms;
 @include foundation-button;
@@ -94,3 +96,4 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
+@import "templates/frontpage";
