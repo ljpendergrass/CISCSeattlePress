@@ -36,7 +36,7 @@
 		<!-- Bar w logo, language selectors, social -->
 		<div class="main-bar row align-stretch">
 			<div class="small-12 medium-6 large-6 columns">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="http://placehold.it/270x80?text=Logo"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="http://placehold.it/270x80?text=Home/Logo"></a>
 			</div>
 			<div class="small-12 medium-6 large-6 columns text-right">
 				<div class="lang-social-container flex-container flex-dir-column">
@@ -56,16 +56,17 @@
 		</div>
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
-				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-				</ul>
-			</div>
-			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
 
 				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
+			</div>
+			<div class="top-bar-right">
+				<ul class="menu">
+					<li><input type="search" placeholder="Search"></li>
+					<li><button type="button" class="button">Search</button></li>
+				</ul>
 			</div>
 		</nav>
 	</header>
