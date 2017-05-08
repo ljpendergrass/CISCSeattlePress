@@ -36,7 +36,7 @@
 		<!-- Bar w logo, language selectors, social -->
 		<div class="main-bar row align-stretch">
 			<div class="small-12 medium-6 large-6 columns">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="http://placehold.it/270x80?text=Home/Logo"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
 			</div>
 			<div class="small-12 medium-6 large-6 columns text-right">
 				<div class="lang-social-container flex-container flex-dir-column">

@@ -50,6 +50,10 @@
 
 // Tablet and desktop menu
 .top-bar {
+  min-height: rem-calc(50px); // match design doc
+  .menu-item, ul, li, top-bar-left, a{
+    min-height: rem-calc(50px);
+  }
   .menu .home a {
     font-size: 1rem;
     color: #B9B9B9;
@@ -70,9 +74,9 @@
     }
   }
 
-  .menu .active > a { background-color: lighten($outer-space, 10%); }
-
-  .menu>li:not(.menu-text)>a { padding: .8rem 2rem; }
+  .menu .active > a { background-color: darken($outer-space, 14%); } // aiming for 514d44 but using scss because it's good as heck
+  .current-menu-item { background-color: darken($outer-space, 14%); } // i think i have to do this with this selector as opposed to the above line
+  .menu>li:not(.menu-text)>a { padding: 1rem 2rem 0 2rem; }
 
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
