@@ -50,9 +50,12 @@
 
 // Tablet and desktop menu
 .top-bar {
-  min-height: rem-calc(50px); // match design doc
+  height: rem-calc(50px); // match design doc
+  .donate{
+    background: map-get($foundation-palette, primary-light);
+  }
   .menu-item, ul, li, top-bar-left, a{
-    min-height: rem-calc(50px);
+    height: rem-calc(50px);
   }
   .menu .home a {
     font-size: 1rem;
@@ -135,4 +138,42 @@
 			}
 		}
 	}
+}
+// Topbar search stuff
+.topbar-search input{
+  outline: none;
+}
+.topbar-search input[type=text] {
+  background: url("http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+  width: 15px;
+  height: rem-calc(50px);
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+  border: 0;
+  padding: 0 10px 0 32px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.topbar-search input::-webkit-search-decoration,
+.topbar-search input::-webkit-search-cancel-button {
+  display: none;
+}
+.topbar-search input[type=text]:focus {
+  width: 130px;
+  color: $primary-color;
+  background-color: lighten($outer-space, 30%);
+}
+.topbar-search input:-moz-placeholder {
+  color: transparent;
+}
+.topbar-search input::-webkit-input-placeholder {
+  color: transparent;
 }
