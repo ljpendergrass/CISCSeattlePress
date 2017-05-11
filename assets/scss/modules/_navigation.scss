@@ -70,11 +70,11 @@
     line-height: 1;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      background: lighten($outer-space, 14%);
     }
   }
 
-  .menu .active > a { background-color: darken($outer-space, 14%); } // aiming for 514d44 but using scss because it's good as heck
+  // .menu .active > a { background-color: darken($outer-space, 14%); } // aiming for 514d44 but using scss because it's good as heck
   .current-menu-item { background-color: darken($outer-space, 14%); } // i think i have to do this with this selector as opposed to the above line
   .menu>li:not(.menu-text)>a { padding: 1rem 2rem 0 2rem; }
 
