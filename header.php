@@ -65,7 +65,7 @@
 			<div class="top-bar-right">
 				<ul class="menu">
 					<!-- <li class="topbar-search"><input type="search" placeholder="Search"></li> -->
-					<li class="topbar-search"><?php get_search_form(); ?></li>
+					<li class="topbar-search"><?php get_template_part( 'template-parts/topbar-searchform' ); ?></li>
 
 					<!-- <li><button type="button" class="button">Search</button></li> -->
 					<li><a class="donate" href="#">DONATE NOW!</a></li>
