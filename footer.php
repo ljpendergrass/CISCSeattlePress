@@ -13,11 +13,11 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer" class="row">
+				<article class="small-12 medium-4 large-3 columns small-text-center">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo-rev-footer.gif"></a>
+				</article>
 				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets-col1' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets-col2' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets-col3' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets-col4' ); ?>
+				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>
 		</div>
