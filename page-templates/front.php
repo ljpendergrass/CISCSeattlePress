@@ -160,28 +160,52 @@ get_header(); ?>
 <?php endwhile;?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
-<section class="inspire">
+<section class="inspire fullblock">
 	<h1 class="text-center">TAKE ACTION</h1>
 	<div class="row">
 		<div class="large-2 columns">
 
 		</div>
 		<figure class="small-12 large-2 columns text-center">
-			<a href="#"><img src="https://placehold.it/240x240" alt="">
+			<a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/action-volunteer.png" alt=" ">
 			<figcaption>Volunteer</figcaption></a>
 		</figure>
 		<figure class="small-12 large-4 columns text-center">
-			<a href="#"><img src="https://placehold.it/240x240" alt="">
+			<a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/action-donation.png" alt=" ">
 			<figcaption>Donation</figcaption></a>
 		</figure>
 		<figure class="small-12 large-2 columns text-center">
-			<a href="#"><img src="https://placehold.it/240x240" alt="">
+			<a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/action-inkind.png" alt=" ">
 			<figcaption>In-kind donation</figcaption></a>
 		</figure>
 		<div class="large-2 columns">
 
 		</div>
 
+	</div>
+</section>
+
+<section>
+	<h2 class="text-center">Stay in touch</h2>
+	<div class="row">
+		<div class="large-6 columns">
+			<ul>
+				<li>
+					Program Contacts
+				</li>
+				<li>
+					Site Locations
+				</li>
+			</ul>
+		</div>
+		<div class="large-6 columns subscribe-box">
+			<h3>Sign Up</h3>
+			<p>Receive news and invitations</p>
+			<label>Email
+        <input type="email" placeholder="Enter your email address">
+      </label>
+			<button type="button" name="button" class="button large">Subscribe</button>
+		</div>
 	</div>
 </section>
 

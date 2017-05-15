@@ -1,3 +1,30 @@
+h1, h2, h3{
+  font-family: $secondary-font-family;
+  color: get-color(primary);
+  text-transform: uppercase;
+  margin: 1rem 0 2.5rem 0;
+}
+.subscribe-box{
+  h3{
+    font-size: 4rem;
+    color: $white;
+    margin: 0 0 .5rem 0;
+  }
+  font-size: 2rem;
+  padding: 3rem;
+  border-radius: .8rem;
+  background: get-color(secondary);
+  color: $white;
+  label{
+    color: $white;
+  }
+  button{
+    font-family: $secondary-font-family;
+    text-transform: uppercase;
+    border: 1px solid $white;
+    margin: .5rem 0;
+  }
+}
 // Page header
 section.container{
   max-width: $global-width;
@@ -131,6 +158,18 @@ h1{
   }
 }
 
+.fullblock{
+  margin-bottom: 2rem;
+  background: #ded9ce;
+  .row{ // TODO: fix fullwidth on inspire sections
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: initial;
+  }
+
+}
+
 .inspire{
   h1{
     margin-bottom: 2rem;
@@ -145,14 +184,11 @@ h1{
     max-width: 120px;
     display:block;
   }
-  .row{ // TODO: fix fullwidth on inspire sections
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: initial;
+  figure{
+    margin-bottom: .4rem;
   }
   background: #ded9ce;
-  padding: 3rem 0;
+  padding: 3rem 0 4rem 0;
 }
 
 
