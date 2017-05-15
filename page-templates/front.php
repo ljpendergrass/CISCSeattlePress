@@ -31,7 +31,7 @@ get_header(); ?>
 		<li class="orbit-slide is-active">
 
 	    <figure class="orbit-img-container">
-				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
+
 			</figure>
 
 	    <figcaption class="orbit-caption">Front page headline. Lorem ipsum dolor. <a href="#" class="button large orbit-cta">READ MORE</a></figcaption>
@@ -77,7 +77,7 @@ get_header(); ?>
 	<ul class="accordion intro-flex-container" data-responsive-accordion-tabs="tabs small-accordion medium-accordion large-tabs">
 	  <li class="accordion-item large-flex-child-auto is-active" data-accordion-item >
 	    <a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-early-ed.png" alt="Space">
 				Early Childhood Education</a>
 	    <div class="accordion-content" data-tab-content>
 	      A short description about Early Childhood Education goes here. <a href="#" class="button small">LEARN MORE</a>
@@ -85,7 +85,7 @@ get_header(); ?>
 	  </li>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-youth.png" alt="Space">
 				Youth Program</a>
 	    <div class="accordion-content" data-tab-content>
 				Youth Program description. <a href="#" class="button small">LEARN MORE</a>
@@ -93,7 +93,7 @@ get_header(); ?>
 	  </li>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-family.png" alt="Space">
 				Family Program</a>
 			<div class="accordion-content" data-tab-content>
 				Family Program description. <a href="#" class="button small">LEARN MORE</a>
@@ -101,7 +101,7 @@ get_header(); ?>
 		</li>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-senior.png" alt="Space">
 				Senior Program</a>
 			<div class="accordion-content" data-tab-content>
 				Senior Program description. <a href="#" class="button small">LEARN MORE</a>
@@ -109,7 +109,7 @@ get_header(); ?>
 		</li>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-health.png" alt="Space">
 				Health Care Access</a>
 			<div class="accordion-content" data-tab-content>
 				Health Care Access description. <a href="#" class="button small">LEARN MORE</a>
@@ -117,7 +117,7 @@ get_header(); ?>
 		</li>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
-				<img src="https://placehold.it/200x200" alt="">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-crime.png" alt="Space">
 				Crime Victim Advocacy</a>
 			<div class="accordion-content" data-tab-content>
 				Crime Victim Advocacy description. <a href="#" class="button small">LEARN MORE</a>
