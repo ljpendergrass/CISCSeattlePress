@@ -118,7 +118,7 @@ get_header(); ?>
 		<li class="accordion-item large-flex-child-auto" data-accordion-item>
 			<a href="#" class="accordion-title">
 				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/intro-crime.png" alt="Space">
-				Crime Victim Advocacy</a>
+				Crime Victim Advocacy Program</a>
 			<div class="accordion-content" data-tab-content>
 				Crime Victim Advocacy description. <a href="#" class="button small">LEARN MORE</a>
 			</div>
@@ -128,6 +128,7 @@ get_header(); ?>
 
 	</ul>
 </section>
+<!-- end intro -->
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <section class="intro" role="main">
