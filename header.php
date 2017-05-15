@@ -34,11 +34,11 @@
 			</div>
 		</div>
 		<!-- Bar w logo, language selectors, social -->
-		<div class="main-bar row align-stretch">
-			<div class="small-12 medium-6 large-6 columns">
+		<div class="main-bar row align-stretch hide-for-small-only">
+			<div class="medium-6 large-6 columns">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
 			</div>
-			<div class="small-12 medium-6 large-6 columns text-right">
+			<div class="medium-6 large-6 columns text-right">
 				<div class="lang-social-container flex-container flex-dir-column">
 					<ul class="lang flex-child-grow">
 						<li class="selected"><a href="#">ENGLISH</a></li>
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		</div>
-		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+		<nav id="site-navigation" class="main-navigation top-bar 	hide-for-small-only" role="navigation">
 			<div class="top-bar-left">
 				<?php foundationpress_top_bar_r(); ?>
 
@@ -65,7 +65,8 @@
 			<div class="top-bar-right">
 				<ul class="menu">
 					<!-- <li class="topbar-search"><input type="search" placeholder="Search"></li> -->
-					<li class="topbar-search"><?php get_template_part( 'topbar-searchform' ); ?></li> <!-- insert new seachform -->
+					<!-- <li class="topbar-search"><?php get_template_part( 'topbar-searchform' ); ?></li>  -->
+					<!-- insert new seachform -->
 
 					<!-- <li><button type="button" class="button">Search</button></li> -->
 					<li><a class="donate" href="#">DONATE NOW!</a></li>
