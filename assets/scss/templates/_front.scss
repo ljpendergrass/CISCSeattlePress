@@ -6,6 +6,9 @@ section.container{
 .orbit-container button{
   background: rgba(0,0,0,0.2);
   padding: 0.4rem 1.2rem;
+  @include breakpoint(medium down){
+    padding: .2rem;
+  }
 }
 .orbit-img-container{
   max-height: 400px;
@@ -14,9 +17,11 @@ section.container{
 .orbit-caption{
   text-align: center;
   font-size: 1.6rem;
+  line-height: 3.5rem;
   font-family: $secondary-font-family;
-  &:not(a){
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 3px rgba($black,0.8);
+  @include breakpoint(medium down){
+    font-size: 1.2rem;
   }
 }
 .orbit-cta{
@@ -24,6 +29,78 @@ section.container{
   border: 1px solid $white;
   vertical-align: baseline;
   margin-left: 1rem;
+  text-shadow: none;
+  box-shadow: 1px 1px 3px rgba($black,0.8);
+}
+.help-intro{
+  margin: 1.5rem 0;
+  .button{
+    vertical-align: baseline;
+    font-family: $secondary-font-family;
+  }
+  h1{
+    font-family: $secondary-font-family;
+    color: get-color(primary);
+  }
+}
+.intro-flex-container{
+  @include breakpoint(large) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .accordion-content{
+    @include breakpoint(small only) {
+      text-align: center;
+
+    }
+  }
+  li{
+    &:not(.is-active){
+      a{
+        color: get-color(secondary);
+      }
+    }
+    a{
+      height: 100%;
+      text-align: center;
+      font-family: $secondary-font-family;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      line-height: 1.3rem;
+      @include breakpoint(medium down) {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+      }
+      @include breakpoint(medium only) {
+        text-align: left;
+      }
+
+      img{
+        @include breakpoint(large) {
+          display: block;
+          margin-bottom: .3rem;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 1rem;
+          max-width: 80%;
+        }
+        @include breakpoint(medium only) {
+          display: inline-block;
+          max-width: rem-calc(90px);
+        }
+        margin-bottom: .7rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: rem-calc(90px);
+        padding: .2rem;
+      }
+    }
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 16%; // TODO: remove this and do in PHP in style
+  }
 }
 #front-hero {
   .marketing {

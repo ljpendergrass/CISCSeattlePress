@@ -36,6 +36,31 @@ get_header(); ?>
 
 	    <figcaption class="orbit-caption">Front page headline. Lorem ipsum dolor. <a href="#" class="button large orbit-cta">READ MORE</a></figcaption>
 	  </li>
+		<li class="orbit-slide">
+
+			<figure class="orbit-img-container">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
+			</figure>
+
+			<figcaption class="orbit-caption">Second slide.</figcaption>
+		</li>
+		<li class="orbit-slide">
+
+			<figure class="orbit-img-container">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
+			</figure>
+
+			<figcaption class="orbit-caption">Third slide.</figcaption>
+		</li>
+		<li class="orbit-slide">
+
+			<figure class="orbit-img-container">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
+			</figure>
+
+			<figcaption class="orbit-caption">Fourth slide.</figcaption>
+		</li>
+
 	</ul>
 	<nav class="orbit-bullets">
 	  <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
@@ -44,7 +69,65 @@ get_header(); ?>
 	  <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
 	</nav>
 </div>
+<!-- end orbit -->
+<section class="help-intro">
+	<h1 class="text-center">HOW WE HELP</h1>
+	<!-- using tabs to accordion responsive foundation element  -->
+	<!-- TODO: add flex style in order to stretch list in reference to # lis in UL -->
+	<ul class="accordion intro-flex-container" data-responsive-accordion-tabs="tabs small-accordion medium-accordion large-tabs">
+	  <li class="accordion-item large-flex-child-auto is-active" data-accordion-item >
+	    <a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Early Childhood Education</a>
+	    <div class="accordion-content" data-tab-content>
+	      A short description about Early Childhood Education goes here. <a href="#" class="button small">LEARN MORE</a>
+	    </div>
+	  </li>
+		<li class="accordion-item large-flex-child-auto" data-accordion-item>
+			<a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Youth Program</a>
+	    <div class="accordion-content" data-tab-content>
+				Youth Program description. <a href="#" class="button small">LEARN MORE</a>
+	    </div>
+	  </li>
+		<li class="accordion-item large-flex-child-auto" data-accordion-item>
+			<a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Family Program</a>
+			<div class="accordion-content" data-tab-content>
+				Family Program description. <a href="#" class="button small">LEARN MORE</a>
+			</div>
+		</li>
+		<li class="accordion-item large-flex-child-auto" data-accordion-item>
+			<a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Senior Program</a>
+			<div class="accordion-content" data-tab-content>
+				Senior Program description. <a href="#" class="button small">LEARN MORE</a>
+			</div>
+		</li>
+		<li class="accordion-item large-flex-child-auto" data-accordion-item>
+			<a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Health Care Access</a>
+			<div class="accordion-content" data-tab-content>
+				Health Care Access description. <a href="#" class="button small">LEARN MORE</a>
+			</div>
+		</li>
+		<li class="accordion-item large-flex-child-auto" data-accordion-item>
+			<a href="#" class="accordion-title">
+				<img src="https://placehold.it/200x200" alt="">
+				Crime Victim Advocacy</a>
+			<div class="accordion-content" data-tab-content>
+				Crime Victim Advocacy description. <a href="#" class="button small">LEARN MORE</a>
+			</div>
+		</li>
 
+
+
+	</ul>
+</section>
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <section class="intro" role="main">
