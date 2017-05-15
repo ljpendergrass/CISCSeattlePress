@@ -1,4 +1,30 @@
 // Page header
+section.container{
+  max-width: $global-width;
+  margin: auto;
+}
+.orbit-container button{
+  background: rgba(0,0,0,0.2);
+  padding: 0.4rem 1.2rem;
+}
+.orbit-img-container{
+  max-height: 400px;
+  overflow: hidden;
+}
+.orbit-caption{
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: $secondary-font-family;
+  &:not(a){
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+}
+.orbit-cta{
+  font-family: $secondary-font-family;
+  border: 1px solid $white;
+  vertical-align: baseline;
+  margin-left: 1rem;
+}
 #front-hero {
   .marketing {
     @include grid-row();

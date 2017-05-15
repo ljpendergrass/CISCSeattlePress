@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		</div>
-		<nav id="site-navigation" class="main-navigation top-bar 	hide-for-small-only" role="navigation">
+		<nav id="site-navigation" class="main-navigation top-bar row hide-for-small-only" role="navigation">
 			<div class="top-bar-left">
 				<?php foundationpress_top_bar_r(); ?>
 

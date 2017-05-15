@@ -4,7 +4,7 @@ Template Name: Front
 */
 get_header(); ?>
 
-<header id="front-hero" role="banner">
+<!-- <header id="front-hero" role="banner">
 	<div class="marketing">
 		<div class="tagline">
 			<h1><?php bloginfo( 'name' ); ?></h1>
@@ -22,7 +22,28 @@ get_header(); ?>
 		</div>
 	</div>
 
-</header>
+</header> -->
+
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+	<ul class="orbit-container">
+		<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> <i class="fa fa-3x fa-angle-left" aria-hidden="true"></i></button>
+		<button class="orbit-next"><span class="show-for-sr">Next Slide</span> <i class="fa fa-3x fa-angle-right" aria-hidden="true"></i></button>
+		<li class="orbit-slide is-active">
+
+	    <figure class="orbit-img-container">
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
+			</figure>
+
+	    <figcaption class="orbit-caption">Front page headline. Lorem ipsum dolor. <a href="#" class="button large orbit-cta">READ MORE</a></figcaption>
+	  </li>
+	</ul>
+	<nav class="orbit-bullets">
+	  <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+	  <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+	  <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+	  <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+	</nav>
+</div>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
