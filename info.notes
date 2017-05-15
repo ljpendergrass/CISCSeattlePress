@@ -1,14 +1,20 @@
-TODO
+notesTODO
 
 4/30
 - Settings page
   - ### 1280px width @ desktop ###
-  - Colors
-  - Max width & breakpoints
+  - ### Colors ###
+  - ### Max width ### (use row) & breakpoints
 - Skin kitchen sink
-- Header & footer
+- header ( NEAR COMPLETION) & footer
 - post styles?
 - build sitemap
   - build front page
     - refer to sketch
     - DEPLOY & PREVIEW
+
+FOR MONDAY PREVIEW
+
+- Front page as it stands in design doc
+- MOBILE VIEW
+- Potential to hook into front page of site as it is
