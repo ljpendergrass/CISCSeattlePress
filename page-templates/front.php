@@ -188,17 +188,17 @@ get_header(); ?>
 <section>
 	<h2 class="text-center">Stay in touch</h2>
 	<div class="row">
-		<div class="large-6 columns">
-			<ul>
+		<div class="small-12 medium-6 large-6 columns">
+			<ul class="menu centered vertical mainpage-info no-bullet align-center">
 				<li>
-					Program Contacts
+					<a href="#"><i class="fa fa-fw fa-address-book green" aria-hidden="true"></i> <span>Program Contacts</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 				</li>
 				<li>
-					Site Locations
+					<a href="#"><i class="fa fa-fw fa-map-marker green" aria-hidden="true"></i><span>Site Locations</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 				</li>
 			</ul>
 		</div>
-		<div class="large-6 columns subscribe-box">
+		<div class="small-12 medium-6 large-6 columns subscribe-box">
 			<h3>Sign Up</h3>
 			<p>Receive news and invitations</p>
 			<label>Email
@@ -208,9 +208,5 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-
-<div class="section-divider">
-	<hr />
-</div>
 
 <?php get_footer();

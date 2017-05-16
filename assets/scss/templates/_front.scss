@@ -4,6 +4,15 @@ h1, h2, h3{
   text-transform: uppercase;
   margin: 1rem 0 2.5rem 0;
 }
+.mainpage-info{
+  li{
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  .green{
+    color: #707929;
+  }
+}
 .subscribe-box{
   h3{
     font-size: 4rem;
@@ -24,6 +33,13 @@ h1, h2, h3{
     border: 1px solid $white;
     margin: .5rem 0;
   }
+  @include breakpoint(medium only){
+    border-radius: .8rem 0 0 .8rem;
+  }
+  @include breakpoint(small only){
+    border-radius: 0;
+  }
+
 }
 // Page header
 section.container{
