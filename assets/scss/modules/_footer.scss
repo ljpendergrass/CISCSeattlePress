@@ -47,4 +47,12 @@
       border: 1px solid get-color(secondary-light);
     }
   }
+  .menu {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    a{
+      padding: 0;
+      line-height: 1.6;
+    }
+  }
 }

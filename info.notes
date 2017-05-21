@@ -6,22 +6,25 @@ notesTODO
   - ### Colors ###
   - ### Max width ### (use row) & breakpoints
 - Skin kitchen sink
-- header ( NEAR COMPLETION) & footer
 - post styles?
 - build sitemap
   - build front page
     - refer to sketch
     - DEPLOY & PREVIEW
 
-FOR MONDAY PREVIEW
+off-canvas menu: 100vh is what's causing the links to extend how they do
 
-- Front page as it stands in design doc
-- MOBILE VIEW
-- Potential to hook into front page of site as it is
-
-TODO: Update CISC Logo in footer
-TODO: Update Social Footer
+TODO: Break apart front page to Content
+TODO: Fullmenu header (INVISION SITE? )
 TODO: Localization available on mobile
-TODO: New searchform
+TODO: Topbar menu
+TODO: Topbar menu mobile
+TODO: New searchform (google at first?)
+TODO: Implement lang
+TODO: Allow edit Social Footer
+TODO: Allow moddable CISC Logo in footer
 TODO: front page flex (see respective front files)
 TODO: Refactor common CSS, like secondary font, secondary font body, secondary font upprecase, button etc
+TODO: Front page editable
+TODO: Footer Alternate 5columns - Per design doc, in order of units: 3 2 2 3 2
+TODO: Interior Pages

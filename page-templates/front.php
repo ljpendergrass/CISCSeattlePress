@@ -24,14 +24,14 @@ get_header(); ?>
 
 </header> -->
 
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+<div class="orbit" role="region" aria-label="Main Images" data-orbit>
 	<ul class="orbit-container">
 		<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> <i class="fa fa-3x fa-angle-left" aria-hidden="true"></i></button>
 		<button class="orbit-next"><span class="show-for-sr">Next Slide</span> <i class="fa fa-3x fa-angle-right" aria-hidden="true"></i></button>
 		<li class="orbit-slide is-active">
 
 	    <figure class="orbit-img-container">
-
+				<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/demo/image01.jpg" alt="Space">
 			</figure>
 
 	    <figcaption class="orbit-caption">Front page headline. Lorem ipsum dolor. <a href="#" class="button large orbit-cta">READ MORE</a></figcaption>
