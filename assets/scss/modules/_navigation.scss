@@ -91,14 +91,39 @@
   .dropdown.menu .submenu {
     z-index: 11; // literally right above the orbit buttons.
     border: 0;
+    li, a{
+      height: auto;
+      min-height: rem-calc(50px);
+      &:hover{
+        background: lighten(#575144, 5%);
+      }
+    }
     a{
+      height: auto;
+      min-height: rem-calc(50px);
       font-size: inherit;
-      line-height: inherit;
+      line-height: 1.2rem;
       font-family: $body-font-family;
       text-transform: none;
+      padding: 1rem 2rem 1rem 2rem;
     }
     .is-dropdown-submenu-item{
       background: #575144;
+    }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active > a{
+      // background: lighten(#575144, 5%); // active menus need to stay colored
+      color: get-color(secondary-light);
+      &::after{
+        content: '>';
+        display: block;
+        color: get-color(secondary-light);
+        padding-bottom: 8px;
+      }
+    }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active{
+      .is-dropdown-submenu li{
+        border-left: 1px solid get-color(secondary-light);
+      }
     }
   }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
