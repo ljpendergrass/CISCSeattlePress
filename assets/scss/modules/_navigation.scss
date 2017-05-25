@@ -83,10 +83,10 @@
   }
   // .menu .active > a { background-color: darken($outer-space, 14%); } // aiming for 514d44 but using scss because it's good as heck
   .current-menu-item { background-color: darken($outer-space, 14%); } // i think i have to do this with this selector as opposed to the above line
-  .menu>li:not(.menu-text)>a { padding: 1rem 2rem 0 2rem; }
+  .menu>li:not(.menu-text)>a { padding: 1rem 1.25rem 0 1.25rem; }
 
-  .is-dropdown-submenu{
-    min-width: 100%;
+  .dropdown.menu.vertical > li .is-dropdown-submenu{
+    top: 1px;
   }
   .dropdown.menu .submenu {
     z-index: 11; // literally right above the orbit buttons.
@@ -105,11 +105,20 @@
       line-height: 1.2rem;
       font-family: $body-font-family;
       text-transform: none;
-      padding: 1rem 2rem 1rem 2rem;
+      padding: 1rem 1rem 1rem 1.25rem;
     }
     .is-dropdown-submenu-item{
       background: #575144;
     }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.menu-item-has-children > a{
+      &::after{
+        content: '>';
+        display: block;
+        right: 6px;
+        margin-top: -5%;
+      }
+    }
+
     .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active > a{
       // background: lighten(#575144, 5%); // active menus need to stay colored
       color: get-color(secondary-light);
@@ -122,7 +131,9 @@
     }
     .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active{
       .is-dropdown-submenu li{
-        border-left: 1px solid get-color(secondary-light);
+        // border-left: 1px solid get-color(secondary-light);
+        border-left: 1px solid lighten(#575144, 8%);
+
       }
     }
   }
