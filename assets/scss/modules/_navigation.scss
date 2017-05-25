@@ -9,8 +9,24 @@
 
 // Mobile menu
 .off-canvas {
+  box-sizing: border-box;
+  .menu > li > a{
+    line-height: 1.2;
+  }
+  .menu-item:not(.is-submenu-item){
+    &:first-child{
+      border-top: 0;
+    }
+    border-top: 1px solid $white;
+  }
+  .is-accordion-submenu-parent.is-submenu-item.is-accordion-submenu-item{
+    &:first-child{
+      border-top: 1px solid $white;
+    }
+    border-bottom: 1px solid $white;
+  }
   > ul.menu {
-    height: 100vh;
+    // height: 100vh;
     padding: 1rem;
 
     a {
@@ -33,6 +49,10 @@
       top: 50%;
       margin-top: -3px;
       right: 1rem;
+      }
+      ul{
+        margin: 0;
+        padding-left: 1rem;
       }
   }
 
