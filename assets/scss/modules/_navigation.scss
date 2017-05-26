@@ -63,8 +63,10 @@
 
 .title-bar-title {
   a {
-    font-size: 1rem;
-    color: #B9B9B9;
+    font-size: 1.2rem;
+    font-family: $secondary-font-family;
+    // color: #B9B9B9;
+    color: $white;
   }
 }
 
