@@ -65,7 +65,7 @@
 			<div class="top-bar-right">
 				<ul class="menu">
 					<!-- <li class="topbar-search"><input type="search" placeholder="Search"></li> -->
-					<!-- <li class="topbar-search"><?php get_template_part( 'topbar-searchform' ); ?></li>  -->
+					<li class="topbar-search"><?php get_template_part( 'topbar-searchform' ); ?></li> 
 					<!-- insert new seachform -->
 
 					<!-- <li><button type="button" class="button">Search</button></li> -->

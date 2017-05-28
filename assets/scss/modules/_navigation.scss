@@ -217,54 +217,65 @@
 	}
 }
 // Topbar search stuff
-.topbar-search input{
-  outline: none;
-}
-.topbar-search input[type=text] {
-  background: $outer-space url("http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
-  &::before{
-    content: "\f002";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: #fff;
-    font-size: rem-calc(18px);
+// OUTMODED
+// .topbar-search input{
+//   outline: none;
+// }
+// .topbar-search input[type=text] {
+//   background: $outer-space url("http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
+//   &::before{
+//     content: "\f002";
+//     font-family: FontAwesome;
+//     font-style: normal;
+//     font-weight: normal;
+//     text-decoration: inherit;
+//     color: #fff;
+//     font-size: rem-calc(18px);
+//
+//   }
+//   -webkit-appearance: textfield;
+//   -webkit-box-sizing: content-box;
+//   font-family: inherit;
+//   font-size: 100%;
+//   width: 15px;
+//   height: rem-calc(50px);
+//   padding-left: 10px;
+//   color: transparent;
+//   cursor: pointer;
+//   -webkit-transition: all .5s;
+//   -moz-transition: all .5s;
+//   transition: all .5s;
+//   border: 0;
+//   padding: 0 10px 0 32px;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+// .topbar-search input::-webkit-search-decoration,
+// .topbar-search input::-webkit-search-cancel-button {
+//   display: none;
+// }
+// .topbar-search input[type=text]:focus {
+//   width: 130px;
+//   color: $primary-color;
+//   background-color: lighten($outer-space, 30%);
+// }
+// .topbar-search input:-moz-placeholder {
+//   color: transparent;
+// }
+// .topbar-search input::-webkit-input-placeholder {
+//   color: transparent;
+// }
+// .topbar-search input[type=submit]{
+//   height: rem-calc(50px);
+//   margin: 0;
+// }
+//////////////////////////////////////////////////////\
 
+.topbar-search{
+  i{
+    margin-top: 8px;
   }
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  font-family: inherit;
-  font-size: 100%;
-  width: 15px;
-  height: rem-calc(50px);
-  padding-left: 10px;
-  color: transparent;
-  cursor: pointer;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-  border: 0;
-  padding: 0 10px 0 32px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.topbar-search input::-webkit-search-decoration,
-.topbar-search input::-webkit-search-cancel-button {
-  display: none;
-}
-.topbar-search input[type=text]:focus {
-  width: 130px;
-  color: $primary-color;
-  background-color: lighten($outer-space, 30%);
-}
-.topbar-search input:-moz-placeholder {
-  color: transparent;
-}
-.topbar-search input::-webkit-input-placeholder {
-  color: transparent;
-}
-.topbar-search input[type=submit]{
-  height: rem-calc(50px);
-  margin: 0;
+  li{
+    @include disable-mouse-outline;
+  }
 }
