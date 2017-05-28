@@ -273,9 +273,17 @@
 
 .topbar-search{
   i{
-    margin-top: 8px;
+    margin: .5rem 1rem 0 0 ;
+    color: $white;
+    &:hover{
+      color: get-color(secondary-light);
+    }
   }
   li{
     @include disable-mouse-outline;
   }
+}
+.topbar-search input[type=submit]{
+  height: rem-calc(50px);
+  margin: 0;
 }
