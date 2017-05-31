@@ -36,3 +36,24 @@ TODO: Refactor common CSS, like secondary font, secondary font body, secondary f
 TODO: Front page editable
 TODO: Footer Alternate 5columns - Per design doc, in order of units: 3 2 2 3 2
 TODO: Interior Pages
+
+
+SHORTCODE/CUSTOM FIELD COMBO front page modularity
+# - h2 how we help
+
+- [ how we help ]
+  - KV: Item(s) 1-6
+
+- [ take action ]
+  - KV: Item(s) 1-3
+
+# - h2
+
+- [ Events/Posts ]
+  - tagged front
+
+- [ In the News ] [Pull last 3 posts tagged 'news']
+
+# - h2
+
+- [ Contact ]
