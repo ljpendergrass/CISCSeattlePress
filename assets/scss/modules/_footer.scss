@@ -59,6 +59,10 @@
     a{
       padding: 0;
       line-height: 1.6;
+      @include breakpoint(small){
+        display: inline;
+        text-align: center;
+      }
     }
   }
 }
