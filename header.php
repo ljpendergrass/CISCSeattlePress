@@ -42,13 +42,13 @@
 				<div class="lang-social-container flex-container flex-dir-column">
 					<ul class="lang flex-child-grow">
 						<li class="selected"><a href="#">ENGLISH</a></li>
-						<li class="unselected"><a href="#">Lang2</a></li>
-						<li class="unselected"><a href="#">Lang3</a></li>
+						<li class="unselected"><a class="chinese-txt" href="http://www.cisc-seattle.org/?page=home&lang=zhs">简体</a></li>
+						<li class="unselected"><a class="chinese-txt" href="http://www.cisc-seattle.org/?page=home&lang=zht">繁體</a></li>
 					</ul>
 					<ul class="social flex-child-shrink">
-						<li><a href="#"><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-2x fa-rss-square" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-2x fa-youtube-square" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.facebook.com/cisc.seattle/"><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a></li>
+						<li><a href="http://cisc-seattle.blogspot.com/"><i class="fa fa-2x fa-rss-square" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.youtube.com/user/ciscseattle"><i class="fa fa-2x fa-youtube-square" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 			</div>

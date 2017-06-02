@@ -224,6 +224,9 @@
 			.unselected a{
 				color: $body-font-color;
 			}
+       a:hover{
+         color: get-color(primary);
+       }
 		}
 		.social{
 			li{
