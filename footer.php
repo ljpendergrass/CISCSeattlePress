@@ -13,10 +13,10 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer" class="row">
+				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<article class="small-12 medium-4 large-3 columns small-text-center">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo-rev-footer.gif"></a>
 				</article>
-				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>

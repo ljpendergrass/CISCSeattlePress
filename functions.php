@@ -54,5 +54,8 @@ require_once( 'library/responsive-images.php' );
 /** Shortcodes */
 require_once( 'library/shortcodes.php' );
 
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

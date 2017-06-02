@@ -224,3 +224,45 @@ function contact_func( $atts ) {
  }
  add_shortcode( 'contact', 'contact_func' );
 // end contact
+
+// [donatebutton text="text"]
+function footer_donatebutton_func( $atts ) {
+  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
+    'text' => 'something',
+  ), $atts );
+  return "<a class='large expanded button donate'>{$a['text']}</a>";
+ }
+ add_shortcode( 'footer_donatebutton', 'footer_donatebutton_func' );
+// end test
+
+// [footersocial foo="foo-value"]
+function footersocial_func( $atts ) {
+  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
+    'fblink' => '#fb',
+    'bloglink' => '#blog',
+    'ytlink' => '#yt',
+  ), $atts );
+  if ($a['fblink'] != '#fb') {
+    $fbreturn = "<li><a href='{$a['fblink']}'><i class='fa fa-2x fa-facebook-official' aria-hidden='true'></i></a></li>";
+  } else {
+    $fbreturn = " ";
+  };
+  if ($a['bloglink'] != '#blog') {
+    $blogreturn = "<li><a href='{$a['bloglink']}'><i class='fa fa-2x fa-facebook-official' aria-hidden='true'></i></a></li>";
+  } else {
+    $blogreturn = " ";
+  };
+  if ($a['ytlink'] != '#yt') {
+    $ytreturn = "<li><a href='{$a['ytlink']}'><i class='fa fa-2x fa-facebook-official' aria-hidden='true'></i></a></li>";
+  } else {
+    $ytreturn = " ";
+  };
+
+  return "<ul class='social text-center flex-child-shrink'>
+    {$fbreturn}
+    <li><a href='{$a['bloglink']}'><i class='fa fa-2x fa-rss-square' aria-hidden='true'></i></a></li>
+    <li><a href='{$a['ytlink']}'><i class='fa fa-2x fa-youtube-square' aria-hidden='true'></i></a></li>
+  </ul>";
+ }
+ add_shortcode( 'footersocial', 'footersocial_func' );
+// end test
