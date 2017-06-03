@@ -266,3 +266,69 @@ function footersocial_func( $atts ) {
  }
  add_shortcode( 'footersocial', 'footersocial_func' );
 // end test
+
+function wpb_postsbycategory() { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
+// the query
+$the_query = new WP_Query( array( 'category_name' => 'news', 'posts_per_page' => 3 ) );
+$string = " "; // init
+// The Loop
+if ( $the_query->have_posts() ) {
+    $string .= '<ul class="row medium-unstack no-bullet">';
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $post_id = get_the_ID();
+        $excerpt = ' ';
+        $publisher = ' ';
+        if ( has_excerpt( $post_id ) ){
+          $excerpt = '<p>' . substr(get_the_excerpt(), 0, 140) . '...</p>';
+        };
+        if ( get_post_meta( $post_id, 'publisher', true ) ){
+          $publisher = '<p class="publisher green">' . get_post_meta( $post_id, 'publisher', true ) . '</p>';
+        };
+            if ( has_post_thumbnail() ) {
+              $string .= '<li class="columns">
+              <div class="card" style="width: 300px;">
+              <a href="' . get_the_permalink() .'">' . get_the_post_thumbnail($post_id, array( 300, 200) ) . '</a>
+                <div class="card-section">
+                <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
+                    ' . $publisher . '
+                  <p class=""><em>' . get_the_date( "", $post_id ) . '</em></p>
+                    ' . $excerpt . '
+                </div>
+              </div>
+            </li>';
+            } else {
+            // if no featured image is found
+            $string .= '<li class="columns">
+            <div class="card" style="width: 300px;">
+              <div class="card-section">
+                <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
+                  ' . $publisher . '
+                <p class=""><em>' . get_the_date( "", $post_id ) . '</em></p>
+                  ' . $excerpt . '
+              </div>
+            </div>
+          </li>';
+            }
+            }
+            $string = "
+            <section class='itn fullblock'>
+              <div class='container'>
+                <h1 class='text-center'>IN THE NEWS</h1>
+            " . $string . "
+              </div>
+            </section>";
+
+    } else {
+    // no posts found
+}
+
+$string .= '</ul>';
+
+return $string;
+
+/* Restore original Post Data */
+wp_reset_postdata();
+}
+// Add a shortcode
+add_shortcode('categoryposts', 'wpb_postsbycategory');

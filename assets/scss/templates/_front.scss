@@ -4,14 +4,15 @@ h1, h2, h3{
   text-transform: uppercase;
   margin: 1rem 0 2.5rem 0;
 }
+.green{
+  color: #707929;
+}
 .mainpage-info{
   li{
     font-size: 2rem;
     margin: 1rem 0;
   }
-  .green{
-    color: #707929;
-  }
+
 }
 .subscribe-box{
   h3{
@@ -42,7 +43,7 @@ h1, h2, h3{
 
 }
 // Page header
-section.container{
+section.container, .container{
   max-width: $global-width;
   margin: auto;
 }
@@ -185,6 +186,19 @@ h1{
 
 }
 
+.itn{
+  padding: 2rem 0 4rem 0;
+  .publisher{
+    margin: 0;
+  }
+  .card{
+    margin:0 auto 1rem auto;
+    p{
+      padding: 0;
+    }
+  }
+}
+
 .inspire{
   h1{
     margin-bottom: 2rem;
@@ -203,7 +217,7 @@ h1{
     margin-bottom: .4rem;
   }
   background: #ded9ce;
-  padding: 3rem 0 4rem 0;
+  padding: 2rem 0 4rem 0;
 }
 
 // Intro
