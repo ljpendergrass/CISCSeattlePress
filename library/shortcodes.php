@@ -267,7 +267,7 @@ function footersocial_func( $atts ) {
  add_shortcode( 'footersocial', 'footersocial_func' );
 // end test
 
-function wpb_postsbycategory() { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
+function wpb_postsbycategory_news() { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
 // the query
 $the_query = new WP_Query( array( 'category_name' => 'news', 'posts_per_page' => 3 ) );
 $string = " "; // init
@@ -277,18 +277,27 @@ if ( $the_query->have_posts() ) {
     while ( $the_query->have_posts() ) {
         $the_query->the_post();
         $post_id = get_the_ID();
-        $excerpt = ' ';
-        $publisher = ' ';
+        $excerpt = " ";
+        $publisher = " ";
+        $img = " ";
+        if ( has_post_thumbnail() ) {
+          $img = "<a href=" . get_the_permalink() .">" . get_the_post_thumbnail($post_id, array( 320, 250) ) . "</a>";
+          $excerptlen = 15;
+        } else {
+          $excerptlen = 65;
+        }
         if ( has_excerpt( $post_id ) ){
-          $excerpt = '<p>' . substr(get_the_excerpt(), 0, 140) . '...</p>';
+          $excerpt = '<p>' . wp_trim_words(get_the_excerpt(), $excerptlen) . ' <a href="' . get_the_permalink() .'">Read <span style="white-space: nowrap;">more <i class="fa fa-angle-double-right" aria-hidden="true"></i></span></a></p>'; // trim excerpt if excerpt
+        } else {
+          $excerpt = '<p>' . wp_trim_words(get_the_content(), $excerptlen) .' <a href="' . get_the_permalink() .'">Read <span style="white-space: nowrap;">more <i class="fa fa-angle-double-right" aria-hidden="true"></i></span></a></p>'; // if not, trim page content
         };
         if ( get_post_meta( $post_id, 'publisher', true ) ){
           $publisher = '<p class="publisher green">' . get_post_meta( $post_id, 'publisher', true ) . '</p>';
         };
-            if ( has_post_thumbnail() ) {
-              $string .= '<li class="columns">
-              <div class="card" style="width: 300px;">
-              <a href="' . get_the_permalink() .'">' . get_the_post_thumbnail($post_id, array( 300, 200) ) . '</a>
+        // compose what we will return
+        $string .= '<li class="columns flex-container">
+              <div class="card" style="width: 320px;">
+                ' . $img . '
                 <div class="card-section">
                 <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
                     ' . $publisher . '
@@ -297,20 +306,8 @@ if ( $the_query->have_posts() ) {
                 </div>
               </div>
             </li>';
-            } else {
-            // if no featured image is found
-            $string .= '<li class="columns">
-            <div class="card" style="width: 300px;">
-              <div class="card-section">
-                <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
-                  ' . $publisher . '
-                <p class=""><em>' . get_the_date( "", $post_id ) . '</em></p>
-                  ' . $excerpt . '
-              </div>
-            </div>
-          </li>';
-            }
-            }
+          } // end while
+          // compose container
             $string = "
             <section class='itn fullblock'>
               <div class='container'>
@@ -318,9 +315,8 @@ if ( $the_query->have_posts() ) {
             " . $string . "
               </div>
             </section>";
-
-    } else {
-    // no posts found
+} else {
+    // no posts
 }
 
 $string .= '</ul>';
@@ -331,4 +327,61 @@ return $string;
 wp_reset_postdata();
 }
 // Add a shortcode
-add_shortcode('categoryposts', 'wpb_postsbycategory');
+add_shortcode('newscards', 'wpb_postsbycategory_news');
+
+
+function wpb_postsbycategory_front( $atts ) { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
+  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
+    'category' => ' ',
+    'amount' => 3,
+    'title' => ' ',
+  ), $atts );
+// the query
+$the_query = new WP_Query( array( 'category_name' => $a["category"], 'posts_per_page' => $a['amount'] ) );
+$string = " "; // init
+// The Loop
+if ( $the_query->have_posts() ) {
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $post_id = get_the_ID();
+        $excerpt = " ";
+        if ( has_excerpt( $post_id ) ){
+          $excerpt = '<p>' . wp_trim_words(get_the_excerpt(), 30) . ' <a href="' . get_the_permalink() .'">Read more <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i></a></p>'; // trim excerpt if excerpt
+        } else{
+          $excerpt = '<p>' . wp_trim_words(get_the_content(), 30) .' <a href="' . get_the_permalink() .'">Read more <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i></a></p>'; // if not, trim page content
+        };
+        // compose what we will return
+        // <div class="card-section">
+        // <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
+        // <p class=""><em>' . get_the_date( "", $post_id ) . '</em></p>
+        // ' . $excerpt . '
+        // </div>
+        $string .= '<article class="row align-center">
+              <div class="columns large-1 medium-2 small-3 large-offset-1 medium-offset-1 text-center">
+                <div class="month">JUN</div>
+                <div class="day">3</div>
+              </div>
+              <div class="columns large-8 medium-8 small-12 large-offset-1">
+                <h3>45th Annual Friendship Dinner and Auction</h3>
+                <p>Please join us for CISC\'s 2017 Friendship Dinner and Auction as we celebrate our 45th Anniversary.</p>
+              </div>
+              </article>';
+          } // end while
+          // compose container
+            $string = "
+            <section class='mainpageposts container'>
+                <h1 class='text-center'>{$title}</h1>
+            " . $string . "
+            </section>";
+} else {
+    // no posts
+}
+
+
+return $string;
+
+/* Restore original Post Data */
+wp_reset_postdata();
+}
+// Add a shortcode
+add_shortcode('mainpageposts', 'wpb_postsbycategory_front');

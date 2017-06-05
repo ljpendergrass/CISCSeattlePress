@@ -187,12 +187,12 @@ h1{
 }
 
 .itn{
-  padding: 2rem 0 4rem 0;
+  padding: 2rem 0 1rem 0;
   .publisher{
     margin: 0;
   }
   .card{
-    margin:0 auto 1rem auto;
+    margin:0 auto 3rem auto;
     p{
       padding: 0;
     }
@@ -314,5 +314,34 @@ p{
     @include grid-row();
     @include grid-column(12);
     margin-top: 4rem;
+  }
+}
+
+.mainpageposts{
+  p{
+    padding: 0;
+  }
+  h3{
+    text-transform: none;
+    margin: 0 0 1rem 0;
+    line-height: 1;
+  }
+  article{
+
+  }
+  .month, .day{
+    font-family: $secondary-font-family;
+    line-height: 1;
+  }
+  .month{
+    padding: 0 .5rem .5rem .5rem;
+    font-size: 2rem;
+    color: $dark-gray;
+    border-bottom: 2px solid $medium-gray;
+  }
+  .day{
+    padding: .5rem;
+    color: get-color(primary);
+    font-size: 4rem;
   }
 }
