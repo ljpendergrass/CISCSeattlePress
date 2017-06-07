@@ -197,6 +197,11 @@ h1{
       padding: 0;
     }
   }
+  li{
+    @include breakpoint(small only){
+      padding: 0;
+    }
+  }
 }
 
 .inspire{
@@ -325,15 +330,28 @@ p{
     text-transform: none;
     margin: 0 0 1rem 0;
     line-height: 1;
+    @include breakpoint(small only){
+      text-align: center;
+    }
+
   }
   article{
 
+  }
+  .month-container{
+    @include breakpoint(small only){
+      margin:0 auto;
+    }
   }
   .month, .day{
     font-family: $secondary-font-family;
     line-height: 1;
   }
   .month{
+    @include breakpoint(large){
+      width: 75%;
+      margin: 0 auto;
+    }
     padding: 0 .5rem .5rem .5rem;
     font-size: 2rem;
     color: $dark-gray;

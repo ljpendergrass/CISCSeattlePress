@@ -20,11 +20,11 @@
 				</article>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 			</div>
-			<div class="row align-bottom">
-				<div class="column align-self-bottom expand text-right" style="align-self: flex-end;">
-					<p>Supported by United Way of King County Copyright 2017. All rights reserved.</p>
+			<div class="row align-right">
+				<div class="columns small-12 medium-9 large-10 align-self-bottom uwkc-msg" style="align-self: flex-end;">
+					<p>Supported by United Way of King County Copyright 2017. All&nbsp;rights&nbsp;reserved.</p>
 				</div>
-				<div class="column shrink">
+				<div class="columns small-12 medium-3 large-2 uwkc-msg">
 					<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/uwkc-white.png" alt="">
 				</div>
 			</div>

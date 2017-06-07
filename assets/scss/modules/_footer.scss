@@ -41,6 +41,11 @@
     }
   }
   .donate{
+    @include breakpoint(medium only){
+      order: 2;
+    }
+    max-width: 320px;
+    margin: 0 auto;
     border: 1px solid $white;
     background: get-color(primary-light);
     &:hover{
@@ -80,6 +85,14 @@
     li{
       display: inline-block;
       padding: .2rem .6rem 0 .6rem;
+    }
+  }
+  .uwkc-msg {
+    text-align: right;
+    @include breakpoint(small only) {
+      align-self: center;
+      margin: 0 auto;
+      text-align: center;
     }
   }
 }

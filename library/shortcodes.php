@@ -18,66 +18,6 @@ function bartag_func( $atts ) {
  add_shortcode( 'bartag', 'bartag_func' );
 // end test
 
-// orbit shortcode, pre break-down
-function orbit_func( $atts ) {
-  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
-    'foo' => 'something',
-    'bar' => 'something else',
-  ), $atts );
-  $t = get_bloginfo('template_directory');
-  $r = '<section class="container">
-  <div class="orbit" role="region" aria-label="Main Images" data-orbit>
-    	<ul class="orbit-container">
-    		<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> <i class="fa fa-3x fa-angle-left" aria-hidden="true"></i></button>
-    		<button class="orbit-next"><span class="show-for-sr">Next Slide</span> <i class="fa fa-3x fa-angle-right" aria-hidden="true"></i></button>
-    		<li class="orbit-slide is-active">
-
-    	    <figure class="orbit-img-container">
-    				<img src="' . $t . '/assets/images/demo/image01.jpg" alt="Space">
-    			</figure>
-
-    	    <figcaption class="orbit-caption">Front page headline. Lorem ipsum dolor. <a href="#" class="button large orbit-cta">READ MORE</a></figcaption>
-    	  </li>
-    		<li class="orbit-slide">
-
-    			<figure class="orbit-img-container">
-    				<img src="' . $t . '/assets/images/demo/image01.jpg" alt="Space">
-    			</figure>
-
-    			<figcaption class="orbit-caption">Second slide.</figcaption>
-    		</li>
-    		<li class="orbit-slide">
-
-    			<figure class="orbit-img-container">
-    				<img src="' . $t . '/assets/images/demo/image01.jpg" alt="Space">
-    			</figure>
-
-    			<figcaption class="orbit-caption">Third slide.</figcaption>
-    		</li>
-    		<li class="orbit-slide">
-
-    			<figure class="orbit-img-container">
-    				<img src="' . $t . '/assets/images/demo/image01.jpg" alt="Space">
-    			</figure>
-
-    			<figcaption class="orbit-caption">Fourth slide.</figcaption>
-    		</li>
-
-    	</ul>
-    	<nav class="orbit-bullets">
-    	  <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-    	  <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-    	  <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-    	  <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-    	</nav>
-    </div>
-    </section>
-    <!-- end orbit -->';
-  return $r;
- }
- add_shortcode( 'orbit', 'orbit_func' );
-// end orbit
-
 // how we help pre breakdown
 function help_func( $atts ) {
   $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
@@ -351,17 +291,12 @@ if ( $the_query->have_posts() ) {
           $excerpt = '<p>' . wp_trim_words(get_the_content(), 30) .' <a href="' . get_the_permalink() .'">Read more <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i></a></p>'; // if not, trim page content
         };
         // compose what we will return
-        // <div class="card-section">
-        // <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
-        // <p class=""><em>' . get_the_date( "", $post_id ) . '</em></p>
-        // ' . $excerpt . '
-        // </div>
         $string .= '<article class="row align-center">
-              <div class="columns large-1 medium-2 small-3 large-offset-1 medium-offset-1 text-center">
+              <div class="columns large-2 medium-2 small-3 large-offset-1 medium-offset-1 text-center month-container">
                 <div class="month">JUN</div>
                 <div class="day">3</div>
               </div>
-              <div class="columns large-8 medium-8 small-12 large-offset-1">
+              <div class="columns large-8 medium-8 small-12">
                 <h3>45th Annual Friendship Dinner and Auction</h3>
                 <p>Please join us for CISC\'s 2017 Friendship Dinner and Auction as we celebrate our 45th Anniversary.</p>
               </div>
@@ -370,7 +305,7 @@ if ( $the_query->have_posts() ) {
           // compose container
             $string = "
             <section class='mainpageposts container'>
-                <h1 class='text-center'>{$title}</h1>
+                <h1 class='text-center'>{$a['title']}</h1>
             " . $string . "
             </section>";
 } else {
