@@ -27,20 +27,20 @@ TODO: Focus on search field on search field expand
 TODO: Break apart front page to Content
 TODO: Fullmenu header (INVISION SITE? )
   Progress on mini menu
-  ALTERNATE MENU RECOMMENDATION
-TODO: Menu Recommend min width issue
+  ### ALTERNATE MENU RECOMMENDATION
+####: Menu Recommend min width issue
   Styles?
   ####: Topbar menu mobile
 TODO: Localization available on mobile
 ####: Topbar menu
-TODO: New searchform (google at first?)
+####: New searchform (google at first?)
 TODO: Implement lang
-TODO: Allow edit Social Footer
+####: Allow edit Social Footer
 TODO: Allow moddable CISC Logo in footer
 TODO: front page flex (see respective front files)
 TODO: Refactor common CSS, like secondary font, secondary font body, secondary font upprecase, button etc
-TODO: Front page editable
-TODO: Footer Alternate 5columns - Per design doc, in order of units: 3 2 2 3 2
+####: Front page editable
+####: Footer Alternate 5columns - Per design doc, in order of units: 3 2 2 3 2
 TODO: Interior Pages
 
 
@@ -65,3 +65,23 @@ SHORTCODE/CUSTOM FIELD COMBO front page modularity
 # - h2
 
 - [ Contact ]
+
+
+
+W/ ASSETS:
+
+- Realign Sizing
+  - MAIN WIDTH (to 1024px)
+  - Navbar/Top
+  - midbar
+  - front page pieces
+  - footer
+- Export assets (going to need help with this one)
+  - Icons
+  -
+- Fonts?
+
+SIMULTANEOUSLY:
+- Finish front page page-picker w/ full iteration/year etc
+
+- Build more pages!

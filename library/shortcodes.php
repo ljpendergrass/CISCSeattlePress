@@ -236,7 +236,7 @@ if ( $the_query->have_posts() ) {
         };
         // compose what we will return
         $string .= '<li class="columns flex-container">
-              <div class="card" style="width: 320px;">
+              <div class="card">
                 ' . $img . '
                 <div class="card-section">
                 <h4><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></h4>
@@ -277,35 +277,50 @@ function wpb_postsbycategory_front( $atts ) { // thank you to http://www.wpbegin
     'title' => ' ',
   ), $atts );
 // the query
-$the_query = new WP_Query( array( 'category_name' => $a["category"], 'posts_per_page' => $a['amount'] ) );
+$the_query = new WP_Query( array( 'category_name' => $a["category"], 'posts_per_page' => $a['amount'], 'keyname' => 'eventdate', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
 $string = " "; // init
 // The Loop
 if ( $the_query->have_posts() ) {
+        $yprevious = 0;
     while ( $the_query->have_posts() ) {
+        $ylabel = ""; // init
         $the_query->the_post();
         $post_id = get_the_ID();
-        $excerpt = " ";
+        $date = get_field('eventdate', false, false); // get date from acf date field
+        $date = new DateTime($date); // new date object
+        $excerpt = " "; // init
+        $title = get_the_title();
+        $m = $date->format('M');
+        $d = $date->format('d'); $d = ltrim($d, '0'); // trim leading zeroes
+        $y = $date->format('Y');
         if ( has_excerpt( $post_id ) ){
           $excerpt = '<p>' . wp_trim_words(get_the_excerpt(), 30) . ' <a href="' . get_the_permalink() .'">Read more <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i></a></p>'; // trim excerpt if excerpt
         } else{
           $excerpt = '<p>' . wp_trim_words(get_the_content(), 30) .' <a href="' . get_the_permalink() .'">Read more <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i></a></p>'; // if not, trim page content
         };
+        if ( $y !== $yprevious ){ // hacky year label check
+          $ylabel = "<h2 class='text-center year'>{$y}</h2>";
+        } else{
+          $ylabel = " "; // init
+        }
+        $yprevious = $date->format('Y'); // set as previous year
         // compose what we will return
-        $string .= '<article class="row align-center">
-              <div class="columns large-2 medium-2 small-3 large-offset-1 medium-offset-1 text-center month-container">
-                <div class="month">JUN</div>
-                <div class="day">3</div>
+        $string .= "{$ylabel}
+              <article class='row align-center event'>
+              <div class='columns large-2 medium-2 small-3 large-offset-1 medium-offset-1 text-center month-container'>
+                <div class='month'>{$m}</div>
+                <div class='day'>{$d}</div>
               </div>
-              <div class="columns large-8 medium-8 small-12">
-                <h3>45th Annual Friendship Dinner and Auction</h3>
-                <p>Please join us for CISC\'s 2017 Friendship Dinner and Auction as we celebrate our 45th Anniversary.</p>
+              <div class='columns large-8 medium-8 small-12'>
+                <h3><a href='" . get_the_permalink() ."'>{$title}</a></h3>
+                {$excerpt}
               </div>
-              </article>';
+              </article>";
           } // end while
           // compose container
             $string = "
             <section class='mainpageposts container'>
-                <h1 class='text-center'>{$a['title']}</h1>
+                <h1 class='text-center eventslabel'>{$a['title']}</h1>
             " . $string . "
             </section>";
 } else {
