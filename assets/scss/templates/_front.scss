@@ -34,13 +34,7 @@ p{
     }
   }
 }
-.mainpage-info{
-  li{
-    font-size: 2rem;
-    margin: 1rem 0;
-  }
 
-}
 .subscribe-box{
   @include breakpoint(small only){
     text-align: center;
@@ -443,4 +437,34 @@ h1{
     color: get-color(primary);
     font-size: 4rem;
   }
+}
+.mainpage-info{
+  li{
+    font-size: 2rem;
+    margin: 1rem 0;
+    @include breakpoint(medium down){
+      text-align: center;
+      margin: 0 0 1rem 0;
+    }
+  }
+}
+a.contacticon{
+  @include breakpoint(medium down){
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  &:hover{
+    img.contacticon{
+      color: $dark-sage // todo: make this work
+    }
+  }
+}
+.contacticon-container{
+  width: 2rem;
+  margin-right: .4rem;
+}
+img.contacticon{
+  width: 1.2rem;
+  height: auto;
+  margin: 0 auto;
 }

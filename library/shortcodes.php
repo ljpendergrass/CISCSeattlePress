@@ -145,21 +145,24 @@ function takeaction_func( $atts ) {
 // end takeaction
 
 // [contact foo="foo-value"]
-function contact_func( $atts ) {
+function contact_func( $atts ) { // todo: fix quotes on this piece of code
   $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
     'foo' => 'something',
     'bar' => 'something else',
   ), $atts );
+  $t = get_bloginfo('template_directory'); //todo: globalize this?
   return '<section class="container">
   	<h2 class="text-center">Stay in touch</h2>
   	<div class="row">
   		<div class="small-12 medium-6 large-6 columns">
   			<ul class="menu centered vertical mainpage-info no-bullet align-center">
   				<li>
-  					<a href="#"><i class="fa fa-fw fa-address-book green" aria-hidden="true"></i> <span>Program Contacts</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+  					<a class="contacticon" href="http://cisc-seattle.org/?page=program_contacts&lang=en">
+            <div class="contacticon-container"><img class="contacticon" src="' . $t . '/assets/images/icon-contact.svg" ></div> <span>Program Contacts</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
   				</li>
   				<li>
-  					<a href="#"><i class="fa fa-fw fa-map-marker green" aria-hidden="true"></i><span>Site Locations</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+  					<a class="contacticon" href="http://cisc-seattle.org/?page=site_locations&lang=en">
+            <div class="contacticon-container"><img class="contacticon" src="' . $t . '/assets/images/icon-location.svg" ></div> <span>Site Locations</span> &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
   				</li>
   			</ul>
   		</div>

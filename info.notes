@@ -89,15 +89,17 @@ SHORTCODE/CUSTOM FIELD COMBO front page modularity
       - LATER: redo
     # News
     # Contact
-      - Icons
-      - Tie to old
-    - style on sign up form
+      # Icons
+      # Tie to old
+    # style on sign up form
+      - connect to something
     - STAGE
     - Presentation doc
       - the above
       - next steps
       - documentation?
 
+    - icons, footer alignment etc
 
 
 
