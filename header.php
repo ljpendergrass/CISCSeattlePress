@@ -28,15 +28,13 @@
 
 	<header id="masthead" class="site-header row flex-container flex-dir-column" role="banner">
 		<div class="title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo-mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
 			<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</div>
 		</div>
 		<!-- Bar w logo, language selectors, social -->
 		<div class="main-bar row align-stretch hide-for-small-only">
 			<div class="medium-6 large-6 columns">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo@3x.png"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
 			</div>
 			<div class="medium-6 large-6 columns text-right">
 				<div class="lang-social-container flex-container flex-dir-column">

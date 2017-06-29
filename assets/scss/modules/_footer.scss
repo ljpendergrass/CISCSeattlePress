@@ -9,7 +9,10 @@
   background: #575144;
   color: $white;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: rem-calc(16px);
+  @include breakpoint(medium down){
+    font-size: rem-calc(14px);
+  }
   a{
     color: $white;
     font-weight: 700;
@@ -93,6 +96,10 @@
       align-self: center;
       margin: 0 auto;
       text-align: center;
+      }
     }
-  }
+    .uwkc-img{
+      width: rem-calc(113px);
+      height: auto;
+    }
 }

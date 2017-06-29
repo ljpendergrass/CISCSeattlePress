@@ -32,7 +32,8 @@ function help_func( $atts ) {
   	<ul class='accordion intro-flex-container' data-responsive-accordion-tabs='tabs small-accordion medium-accordion large-tabs'>
   	  <li class='accordion-item large-flex-child-auto is-active' data-accordion-item >
   	    <a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-early-ed.png' alt='Space'>
+  				<img class='infodefault' src='{$t}/assets/images/sections/icon-early-childhood.svg' alt=' '>
+          <img class='infohover' src='{$t}/assets/images/sections/icon-early-childhood-hover.svg' alt=' '>
   				Early Childhood Education</a>
   	    <div class='accordion-content' data-tab-content>
   	      A short description about Early Childhood Education goes here. <a href='#' class='button small'>LEARN MORE</a>
@@ -40,7 +41,8 @@ function help_func( $atts ) {
   	  </li>
   		<li class='accordion-item large-flex-child-auto' data-accordion-item>
   			<a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-youth.png' alt='Space'>
+          <img class='infodefault' src='{$t}/assets/images/sections/icon-youth.svg' alt=' '>
+          <img class='infohover' src='{$t}/assets/images/sections/icon-youth-hover.svg' alt=' '>
   				Youth Program</a>
   	    <div class='accordion-content' data-tab-content>
   				Youth Program description. <a href='#' class='button small'>LEARN MORE</a>
@@ -48,7 +50,8 @@ function help_func( $atts ) {
   	  </li>
   		<li class='accordion-item large-flex-child-auto' data-accordion-item>
   			<a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-family.png' alt='Space'>
+        <img class='infodefault' src='{$t}/assets/images/sections/icon-family.svg' alt=' '>
+        <img class='infohover' src='{$t}/assets/images/sections/icon-family-hover.svg' alt=' '>
   				Family Program</a>
   			<div class='accordion-content' data-tab-content>
   				Family Program description. <a href='#' class='button small'>LEARN MORE</a>
@@ -56,7 +59,8 @@ function help_func( $atts ) {
   		</li>
   		<li class='accordion-item large-flex-child-auto' data-accordion-item>
   			<a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-senior.png' alt='Space'>
+          <img class='infodefault' src='{$t}/assets/images/sections/icon-senior.svg' alt=' '>
+          <img class='infohover' src='{$t}/assets/images/sections/icon-senior-hover.svg' alt=' '>
   				Senior Program</a>
   			<div class='accordion-content' data-tab-content>
   				Senior Program description. <a href='#' class='button small'>LEARN MORE</a>
@@ -64,7 +68,8 @@ function help_func( $atts ) {
   		</li>
   		<li class='accordion-item large-flex-child-auto' data-accordion-item>
   			<a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-health.png' alt='Space'>
+          <img class='infodefault' src='{$t}/assets/images/sections/icon-health.svg' alt=' '>
+          <img class='infohover' src='{$t}/assets/images/sections/icon-health-hover.svg' alt=' '>
   				Health Care Access</a>
   			<div class='accordion-content' data-tab-content>
   				Health Care Access description. <a href='#' class='button small'>LEARN MORE</a>
@@ -72,7 +77,8 @@ function help_func( $atts ) {
   		</li>
   		<li class='accordion-item large-flex-child-auto' data-accordion-item>
   			<a href='#' class='accordion-title'>
-  				<img src='{$t}/assets/images/demo/intro-crime.png' alt='Space'>
+          <img class='infodefault' src='{$t}/assets/images/sections/icon-victim.svg' alt=' '>
+          <img class='infohover' src='{$t}/assets/images/sections/icon-victim-hover.svg' alt=' '>
   				Crime Victim Advocacy Program</a>
   			<div class='accordion-content' data-tab-content>
   				Crime Victim Advocacy description. <a href='#' class='button small'>LEARN MORE</a>
@@ -111,15 +117,21 @@ function takeaction_func( $atts ) {
         &nbsp;
       </div>
       <figure class='small-12 medium-3 large-2 columns text-center'>
-        <a href='{$url_a}'><img src='{$t}/assets/images/demo/action-volunteer.png' alt=' '>
+        <a href='{$url_a}'>
+        <img class='infodefault' src='{$t}/assets/images/icon-volunteer.svg' alt=' '>
+        <img class='infohover' src='{$t}/assets/images/icon-volunteer-hover.svg' alt=' '>
         <figcaption>{$title_a}</figcaption></a>
       </figure>
       <figure class='small-12 medium-3 large-4 columns text-center'>
-        <a href='{$url_b}'><img src='{$t}/assets/images/demo/action-donation.png' alt=' '>
+        <a href='{$url_b}'>
+        <img class='infodefault' src='{$t}/assets/images/icon-donate.svg' alt=' '>
+        <img class='infohover' src='{$t}/assets/images/icon-donate-hover.svg' alt=' '>
         <figcaption>{$title_b}</figcaption></a>
       </figure>
       <figure class='small-12 medium-3 large-2 columns text-center'>
-        <a href='{$url_c}'><img src='{$t}/assets/images/demo/action-inkind.png' alt=' '>
+        <a href='{$url_c}'>
+        <img class='infodefault' src='{$t}/assets/images/icon-in-kind.svg' alt=' '>
+        <img class='infohover' src='{$t}/assets/images/icon-in-kind-hover.svg' alt=' '>
         <figcaption>{$title_c}</figcaption></a>
       </figure>
       <div class='large-2 columns'>
@@ -221,7 +233,7 @@ if ( $the_query->have_posts() ) {
         $publisher = " ";
         $img = " ";
         if ( has_post_thumbnail() ) {
-          $img = "<a href=" . get_the_permalink() .">" . get_the_post_thumbnail($post_id, array( 320, 250) ) . "</a>";
+          $img = "<a href=" . get_the_permalink() .">" . get_the_post_thumbnail($post_id, array( 640, 500) ) . "</a>";
           $excerptlen = 15;
         } else {
           $excerptlen = 65;
@@ -311,7 +323,7 @@ if ( $the_query->have_posts() ) {
                 <div class='month'>{$m}</div>
                 <div class='day'>{$d}</div>
               </div>
-              <div class='columns large-8 medium-8 small-12'>
+              <div class='columns large-8 medium-8 small-9'>
                 <h3><a href='" . get_the_permalink() ."'>{$title}</a></h3>
                 {$excerpt}
               </div>

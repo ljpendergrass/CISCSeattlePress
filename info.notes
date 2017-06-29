@@ -66,17 +66,50 @@ SHORTCODE/CUSTOM FIELD COMBO front page modularity
 
 - [ Contact ]
 
+6/29 GOALS:
+  - FRONT PAGE ONLINE and ready to link; as defined by design doc
+  - From top to bottom
+    # Logo
+    ##Off canvas (suggestion)
+    # Language Selectors (OLD SITE)
+    - social icons old (lowp)
+    # Top Bar
+      # Menu (Suggestion)
+      # Search (tie to old site? lowp)
+      # donate
+    ##Slider (recommendation - nav outside)
+    # Help section
+      - Tie to old (lowp)
+      - refresh style/match mobile (lowp)
+    # Take action
+      # tie to old
+      - Hover (lowp)
+    - Events
+      # Note how to use
+      - LATER: redo
+    # News
+    # Contact
+      - Icons
+      - Tie to old
+    - style on sign up form
+    - STAGE
+    - Presentation doc
+      - the above
+      - next steps
+      - documentation?
+
+
 
 
 W/ ASSETS:
 
-- Realign Sizing
-  - MAIN WIDTH (to 1024px)
-  - Navbar/Top
+###Realign Sizing
+  ##MAIN WIDTH (to 1024px)
+  ##Navbar/Top
   - midbar
   - front page pieces
   - footer
-- Export assets (going to need help with this one)
+##Export assets (going to need help with this one)
   - Icons
   -
 - Fonts?
@@ -85,3 +118,10 @@ SIMULTANEOUSLY:
 - Finish front page page-picker w/ full iteration/year etc
 
 - Build more pages!
+
+
+IMPROVEMENTS IF TIME:
+- Custom fields into ACF
+- Sort events in the events loop by their ACF dates by dumping posts from the query into an arry and then sorting that array iteratively based on the ACF date.
+  - Then load that array into the printing loop.
+- Slider bullets outside slider

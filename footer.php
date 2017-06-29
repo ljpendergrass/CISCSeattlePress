@@ -25,7 +25,7 @@
 					<p>Supported by United Way of King County Copyright 2017. All&nbsp;rights&nbsp;reserved.</p>
 				</div>
 				<div class="columns small-12 medium-3 large-2 uwkc-msg">
-					<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/uwkc-white.png" alt="">
+					<img class="uwkc-img" src="<?php echo bloginfo('template_directory'); ?>/assets/images/uwkc.svg" alt=" ">
 				</div>
 			</div>
 

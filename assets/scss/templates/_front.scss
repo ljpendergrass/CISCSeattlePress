@@ -4,8 +4,35 @@ h1, h2, h3{
   text-transform: uppercase;
   margin: 1rem 0 2.5rem 0;
 }
-.green{
-  color: #707929;
+// Intro
+.intro {
+  // @include grid-row();
+p{
+  @include grid-row();
+  padding: 0 1rem;
+}
+  .fp-intro {
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include grid-column-offset(1);
+
+      h2 {
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: #777;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
 .mainpage-info{
   li{
@@ -15,13 +42,28 @@ h1, h2, h3{
 
 }
 .subscribe-box{
+  @include breakpoint(small only){
+    text-align: center;
+  }
   h3{
-    font-size: 4rem;
+    font-size: rem-calc(50px);
     color: $white;
     margin: 0 0 .5rem 0;
+    @include breakpoint(medium down){
+      font-size: rem-calc(30px);
+    }
+    @include breakpoint(small){
+      font-size: rem-calc(24px);
+    }
   }
-  font-size: 2rem;
-  padding: 3rem;
+  p{
+    padding: 0;
+    font-size: rem-calc(30px);
+    @include breakpoint(small only){
+      font-size: rem-calc(16px);
+    }
+  }
+  padding: 1rem 2rem;
   border-radius: .8rem;
   background: get-color(secondary);
   color: $white;
@@ -38,7 +80,9 @@ h1, h2, h3{
     border-radius: .8rem 0 0 .8rem;
   }
   @include breakpoint(small only){
-    border-radius: 0;
+    border-radius: .8rem;
+    max-width: calc( 100% - 48px );
+    margin: 0 auto;
   }
 
 }
@@ -92,6 +136,24 @@ h1{
   border-top: 2px dotted get-color(primary);
 }
 .intro-flex-container{
+  .infohover{
+    display: none;
+  }
+  .is-active a, .tabs-title a:hover{
+    .accordion-title{
+      color: $grape;
+    }
+    img.infodefault{
+      display: none;
+    }
+    img.infohover{
+      display: block;
+      @include breakpoint(medium down){
+        display: inline-block;
+      }
+      // border: 1px solid red;
+    }
+  }
   li.is-active::after{
     @include breakpoint(medium down) {
       display: none;
@@ -143,10 +205,10 @@ h1{
       img{
         @include breakpoint(large) {
           display: block;
-          margin-bottom: .3rem;
+          margin-bottom: 1.2rem;
           margin-left: auto;
           margin-right: auto;
-          padding: 1rem;
+          // padding: 1rem;
           max-width: 80%;
         }
         @include breakpoint(medium only) {
@@ -197,11 +259,18 @@ h1{
       text-align: center;
       img{
           width: 100%;
-          max-width: 480px;
       }
     }
     p{
       padding: 0;
+    }
+    @include breakpoint(medium down){
+      p{
+        font-size: rem-calc(14px);
+      }
+    }
+    @include breakpoint(small only){
+      max-width: calc( 100% - 60px );
     }
   }
   li{
@@ -219,10 +288,21 @@ h1{
     font-family: $secondary-font-family;
     text-transform: uppercase;
     font-size: 1.2rem;
+    .infohover{
+      display: none;
+    }
+    &:hover{
+      .infohover{
+        display: block;
+      }
+      .infodefault{
+        display: none;
+      }
+    }
   }
   img{
     margin: 1.2rem auto;
-    max-width: 120px;
+    max-width: rem-calc(100px);
     display:block;
   }
   figure{
@@ -232,36 +312,7 @@ h1{
   padding: 2rem 0 4rem 0;
 }
 
-// Intro
-.intro {
-  // @include grid-row();
-p{
-  @include grid-row();
-  padding: 0 1rem;
-}
-  .fp-intro {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
 
-    @include breakpoint(medium) {
-      @include grid-column(10);
-      @include grid-column-offset(1);
-
-      h2 {
-        font-weight: 300;
-        margin-bottom: 1.5rem;
-      }
-
-      h4 {
-        font-size: 1.125rem;
-        line-height: 1.6;
-        color: #777;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-}
 
 // Section divider
 .section-divider {
@@ -338,6 +389,9 @@ p{
 
   p{
     padding: 0;
+    @include breakpoint(small only){
+      font-size: rem-calc(14px);
+    }
   }
   .eventslabel{
     margin-bottom: .5rem;
@@ -346,15 +400,17 @@ p{
     text-transform: none;
     margin: 0 0 1rem 0;
     line-height: 1;
-    @include breakpoint(small only){
-      text-align: center;
-    }
-
   }
   article.event{
     border-bottom: 2px dotted get-color(primary);
+    &:last-child{
+      border-bottom: none;
+    }
     padding: 1rem 0;
     margin-bottom: 1.5rem;
+    @include breakpoint(medium down){
+      margin: 0 1rem 1.5rem 1rem;
+    }
   }
   .month-container{
     @include breakpoint(small only){
@@ -371,12 +427,18 @@ p{
       width: 75%;
       margin: 0 auto;
     }
+    @include breakpoint(medium down){
+      font-size: rem-calc(24px);
+    }
     padding: 0 .5rem .5rem .5rem;
     font-size: 2rem;
     color: $dark-gray;
     border-bottom: 2px solid $medium-gray;
   }
   .day{
+    @include breakpoint(medium down){
+      font-size: rem-calc(46px);
+    }
     padding: .5rem;
     color: get-color(primary);
     font-size: 4rem;

@@ -50,13 +50,13 @@ $global-font-size: 100%;
 $global-width: rem-calc(1024px);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #6f2d3e,
-  primary-light: #964a3d,
-  secondary: #52a99e,
-  secondary-light: #91ffd5,
+  primary: #6a2440,
+  primary-light: #914a3d,
+  secondary: #52a499,
+  secondary-light: #8cffd0,
   success: #3adb76,
   warning: #ffae00,
-  alert: #bc0610,
+  alert: #b70610,
 );
 $grape: #6a2440;
 $medium-grey: #808077;
@@ -94,7 +94,7 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: true;
 $print-transparent-backgrounds: true;
-
+$topbar-height: rem-calc(40px);
 @include add-foundation-colors;
 
 // 2. Breakpoints
