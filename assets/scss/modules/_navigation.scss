@@ -1,16 +1,51 @@
+.logo-mobile{
+  height: rem-calc(60px);
+  width: auto;
+  // margin: rem-calc(10px);
+}
+
+
 // Navigation breakpoints
 .desktop-menu, .top-bar-left {
   @include show-for(medium);
 }
 
 #mobile-menu, .title-bar {
+  background: none;
   @include hide-for(medium);
+  padding: 1rem;
+}
+.menu-icon{
+  &::after{
+    background: $grape;
+    -webkit-box-shadow: 0 7px 0 $grape, 0 14px 0 $grape;
+    box-shadow: 0 7px 0 $grape, 0 14px 0 $grape;
+  }
 }
 
 // Mobile menu
 .off-canvas {
+  box-sizing: border-box;
+  .menu > li > a{
+    line-height: 1.2;
+  }
+  .menu-item:not(.is-submenu-item){
+    &:first-child{
+      border-top: 0;
+    }
+    border-top: 1px solid $white;
+  }
+  .is-accordion-submenu-parent.is-submenu-item.is-accordion-submenu-item{
+    &:first-child{
+      border-top: 1px solid $white;
+    }
+    border-bottom: 1px solid $white;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
   > ul.menu {
-    height: 100vh;
+    // height: 100vh;
     padding: 1rem;
 
     a {
@@ -34,6 +69,10 @@
       margin-top: -3px;
       right: 1rem;
       }
+      ul{
+        margin: 0;
+        padding-left: 1rem;
+      }
   }
 
   .menu .active > a { background-color: lighten($outer-space, 10%); }
@@ -43,37 +82,119 @@
 
 .title-bar-title {
   a {
-    font-size: 1rem;
-    color: #B9B9B9;
+    font-size: 1.2rem;
+    font-family: $secondary-font-family;
+    // color: #B9B9B9;
+    color: $white;
   }
 }
 
 // Tablet and desktop menu
 .top-bar {
+  min-height: $topbar-height; // match design doc
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .top-bar-left{
+    flex: 0 1 auto;
+  }
+  .top-bar-right{
+    flex: 1 1 auto;
+  }
+  .top-bar-right ul{
+    justify-content: flex-end;
+  }
+  @include breakpoint(medium down){
+    .top-bar-right, .top-bar-left{
+      flex: 1 1 auto;
+    }
+  }
+  .donate{
+    background: map-get($foundation-palette, primary-light);
+  }
+  .menu-item, ul, li, top-bar-left, a{
+    height: $topbar-height;
+  }
   .menu .home a {
     font-size: 1rem;
     color: #B9B9B9;
   }
 
   .menu a {
-    color: #e6e6e6;
+    font-family: $secondary-font-family;
+    text-transform: uppercase;
+    color: #f5f5f5;
     padding-top: 0;
     padding-bottom: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
+    font-weight: 200;
+    font-size: rem-calc(20px);
     line-height: 1;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      // background: lighten($outer-space, 14%);
+      background: #575144;
+      color: get-color(secondary-light);
     }
   }
+  .is-active a{
+    background: #575144; // active menus need to stay colored
+  }
+  // .menu .active > a { background-color: darken($outer-space, 14%); } // aiming for 514d44 but using scss because it's good as heck
+  .current-menu-item { background-color: darken($outer-space, 14%); } // i think i have to do this with this selector as opposed to the above line
+  .menu>li:not(.menu-text)>a { padding: .7rem 1.25rem 0 1.25rem; }
 
-  .menu .active > a { background-color: lighten($outer-space, 10%); }
+  .dropdown.menu.vertical > li .is-dropdown-submenu{
+    top: 1px;
+  }
+  .dropdown.menu .submenu {
+    z-index: 11; // literally right above the orbit buttons.
+    border: 0;
+    li, a{
+      height: auto;
+      min-height:$topbar-height;
+      &:hover{
+        background: lighten(#575144, 5%);
+      }
+    }
+    a{
+      height: auto;
+      min-height: $topbar-height;
+      font-size: inherit;
+      line-height: 1.2rem;
+      font-family: $body-font-family;
+      text-transform: none;
+      padding: 1rem 1rem 1rem 1.25rem;
+    }
+    .is-dropdown-submenu-item{
+      background: #575144;
+    }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.menu-item-has-children > a{
+      &::after{
+        content: '>';
+        display: block;
+        right: 6px;
+        margin-top: -5%;
+      }
+    }
 
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active > a{
+      // background: lighten(#575144, 5%); // active menus need to stay colored
+      color: get-color(secondary-light);
+      &::after{
+        content: '>';
+        display: block;
+        color: get-color(secondary-light);
+        padding-bottom: 8px;
+      }
+    }
+    .is-dropdown-submenu-parent.is-submenu-item.is-dropdown-submenu-item.is-active{
+      .is-dropdown-submenu li{
+        // border-left: 1px solid get-color(secondary-light);
+        border-left: 1px solid lighten(#575144, 8%);
 
-  .dropdown.menu .submenu { border: 0; }
+      }
+    }
+  }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
   .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
@@ -93,3 +214,61 @@
 
 .nav-previous { float:left; }
 .nav-next { float:right; }
+.main-bar{
+	min-height: rem-calc(140px);
+	padding: 0 rem-calc(20px) rem-calc(30px) rem-calc(20px);
+	.logo{
+		width: 270px;
+		margin: rem-calc(30px) 0 0 0;
+		height: auto;
+	}
+	.lang-social-container{
+      min-height: rem-calc(110px);
+
+		ul{
+			list-style-type: none;
+			margin: 0;
+		}
+		.lang{
+			li{
+				display: inline-block;
+				padding: .3rem .2rem;
+				margin: 0 0 0 .6rem;
+				font-family: 'Roboto Condensed';
+			}
+			.selected{
+				border-top: 10px solid map-get($foundation-palette, primary);
+			}
+			.unselected a{
+				color: $body-font-color;
+			}
+       a:hover{
+         color: get-color(primary);
+       }
+		}
+		.social{
+			li{
+				display: inline-block;
+				padding: .2rem 0 0 .6rem;
+			}
+		}
+	}
+}
+
+.topbar-search{
+  i{
+    font-size: 24px;
+    margin: .4rem 1rem 0 0 ;
+    color: $white;
+    &:hover{
+      color: get-color(secondary-light);
+    }
+  }
+  li{
+    @include disable-mouse-outline;
+  }
+}
+.topbar-search input[type=submit]{
+  height: $topbar-height;
+  margin: 0;
+}

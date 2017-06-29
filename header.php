@@ -26,29 +26,52 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header row flex-container flex-dir-column" role="banner">
 		<div class="title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo-mobile" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
 			<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		</div>
+		<!-- Bar w logo, language selectors, social -->
+		<div class="main-bar row align-stretch hide-for-small-only">
+			<div class="medium-6 large-6 columns">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php echo bloginfo('template_directory'); ?>/assets/images/cisc-logo.png"></a>
+			</div>
+			<div class="medium-6 large-6 columns text-right">
+				<div class="lang-social-container flex-container flex-dir-column">
+					<ul class="lang flex-child-grow">
+						<li class="selected"><a href="#">ENGLISH</a></li>
+						<li class="unselected"><a class="chinese-txt" href="http://www.cisc-seattle.org/?page=home&lang=zhs">简体</a></li>
+						<li class="unselected"><a class="chinese-txt" href="http://www.cisc-seattle.org/?page=home&lang=zht">繁體</a></li>
+					</ul>
+					<ul class="social flex-child-shrink">
+						<li><a href="https://www.facebook.com/cisc.seattle/"><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a></li>
+						<li><a href="http://cisc-seattle.blogspot.com/"><i class="fa fa-2x fa-rss-square" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.youtube.com/user/ciscseattle"><i class="fa fa-2x fa-youtube-square" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-
-		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+		</div>
+		<nav id="site-navigation" class="main-navigation top-bar row hide-for-small-only" role="navigation">
 			<div class="top-bar-left">
-				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-				</ul>
-			</div>
-			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
 
 				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
 			</div>
+			<div class="top-bar-right">
+				<ul class="menu">
+					<!-- <li class="topbar-search"><input type="search" placeholder="Search"></li> -->
+					<li class="topbar-search"><?php get_template_part( 'topbar-searchform' ); ?></li>
+					<!-- insert new seachform -->
+
+					<!-- <li><button type="button" class="button">Search</button></li> -->
+					<li><a class="donate" href="#">DONATE NOW!</a></li>
+				</ul>
+			</div>
 		</nav>
 	</header>
 
-	<section class="container">
+	<section>
 		<?php do_action( 'foundationpress_after_header' );

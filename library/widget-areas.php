@@ -21,8 +21,8 @@ function foundationpress_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'footer-widgets',
 	  'name' => __( 'Footer widgets', 'foundationpress' ),
-	  'description' => __( 'Drag widgets to this footer container', 'foundationpress' ),
-	  'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
+	  'description' => __( 'Drag widgets to this footer container. Add widgets in desired order as they should appear from left to right.', 'foundationpress' ),
+	  'before_widget' => '<article id="%1$s" class="small-12 medium-4 large-2 columns widget %2$s">',
 	  'after_widget' => '</article>',
 	  'before_title' => '<h6>',
 	  'after_title' => '</h6>',

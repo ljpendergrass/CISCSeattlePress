@@ -1,14 +1,129 @@
-TODO
+notesTODO
 
 4/30
 - Settings page
   - ### 1280px width @ desktop ###
-  - Colors
-  - Max width & breakpoints
+  - ### Colors ###
+  - ### Max width ### (use row) & breakpoints
 - Skin kitchen sink
-- Header & footer
 - post styles?
 - build sitemap
   - build front page
     - refer to sketch
     - DEPLOY & PREVIEW
+
+### Footer fix - see notes
+### Fix topbar nav
+News section
+Posts section
+fix orbit
+front page stage
+imagery loop in
+
+####: Seach solution: JS hide/show w/ icon
+TODO: [Research accessible fallback]
+TODO: Focus on search field on search field expand
+
+TODO: Break apart front page to Content
+TODO: Fullmenu header (INVISION SITE? )
+  Progress on mini menu
+  ### ALTERNATE MENU RECOMMENDATION
+####: Menu Recommend min width issue
+  Styles?
+  ####: Topbar menu mobile
+TODO: Localization available on mobile
+####: Topbar menu
+####: New searchform (google at first?)
+TODO: Implement lang
+####: Allow edit Social Footer
+TODO: Allow moddable CISC Logo in footer
+TODO: front page flex (see respective front files)
+TODO: Refactor common CSS, like secondary font, secondary font body, secondary font upprecase, button etc
+####: Front page editable
+####: Footer Alternate 5columns - Per design doc, in order of units: 3 2 2 3 2
+TODO: Interior Pages
+
+
+iterate over # of things
+
+SHORTCODE/CUSTOM FIELD COMBO front page modularity
+# - h2 how we help
+
+- [ how we help ]
+  - KV: Item(s) 1-6
+
+- [ take action ]
+  - KV: Item(s) 1-3
+
+# - h2
+
+- [ Events/Posts ]
+  - tagged front
+
+- [ In the News ] [Pull last 3 posts tagged 'news']
+
+# - h2
+
+- [ Contact ]
+
+6/29 GOALS:
+  - FRONT PAGE ONLINE and ready to link; as defined by design doc
+  - From top to bottom
+    # Logo
+    ##Off canvas (suggestion)
+    # Language Selectors (OLD SITE)
+    - social icons old (lowp)
+    # Top Bar
+      # Menu (Suggestion)
+      # Search (tie to old site? lowp)
+      # donate
+    ##Slider (recommendation - nav outside)
+    # Help section
+      - Tie to old (lowp)
+      - refresh style/match mobile (lowp)
+    # Take action
+      # tie to old
+      - Hover (lowp)
+    - Events
+      # Note how to use
+      - LATER: redo
+    # News
+    # Contact
+      # Icons
+      # Tie to old
+    # style on sign up form
+      - connect to something
+    - STAGE
+    - Presentation doc
+      - the above
+      - next steps
+      - documentation?
+
+    - icons, footer alignment etc
+
+
+
+W/ ASSETS:
+
+###Realign Sizing
+  ##MAIN WIDTH (to 1024px)
+  ##Navbar/Top
+  - midbar
+  - front page pieces
+  - footer
+##Export assets (going to need help with this one)
+  - Icons
+  -
+- Fonts?
+
+SIMULTANEOUSLY:
+- Finish front page page-picker w/ full iteration/year etc
+
+- Build more pages!
+
+
+IMPROVEMENTS IF TIME:
+- Custom fields into ACF
+- Sort events in the events loop by their ACF dates by dumping posts from the query into an arry and then sorting that array iteratively based on the ACF date.
+  - Then load that array into the printing loop.
+- Slider bullets outside slider

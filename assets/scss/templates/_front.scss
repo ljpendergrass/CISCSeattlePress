@@ -1,120 +1,16 @@
-// Page header
-#front-hero {
-  .marketing {
-    @include grid-row();
-    max-width: 55rem;
-  }
-
-  @include breakpoint(small) {
-    background: url('../images/demo/hero-bg-foundation-6-small.svg') bottom center;
-    background-size: cover;
-    background-position: bottom;
-    padding: rem-calc(65%) 0;
-    margin: 0 0 rem-calc(32);
-    height: auto;
-    position: relative;
-    text-align: left;
-  }
-
-  @include breakpoint(medium) {
-    background: url('../images/demo/hero-bg-foundation-6-large.svg') bottom center;
-    background-size: cover;
-    background-position: center;
-    height: rem-calc(685);
-    margin: 0 0 rem-calc(72);
-  }
-
-  #watch {
-    @include breakpoint(small) {
-      @include grid-column(7);
-      @include grid-column-position(-5);
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(12);
-      @include grid-column-position(0);
-    }
-
-    section {
-      display: inline;
-    }
-
-    a {
-      color: #B4C9D1;
-      cursor: pointer;
-      font-weight: 400;
-      margin-right: rem-calc(20);
-    }
-
-    a:hover {
-      color: #fff;
-    }
-
-    #stargazers {
-      :before {
-        content: "\f09b";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        color: #B4C9D1;
-        margin-right: rem-calc(8);
-      }
-    }
-
-    #twitter {
-      :before {
-        content: "\f099";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        color: #B4C9D1;
-        margin-right: rem-calc(8);
-      }
-    }
-
-  }
-
-  .tagline {
-    @include breakpoint(small) {
-      @include grid-column(8);
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(5);
-      padding-top: 6rem;
-    }
-  }
-
-  h1 {
-    color: #fff;
-    font-weight: 500;
-
-    @include breakpoint(small) {
-      font-size: 2.2rem;
-    }
-
-    @include breakpoint(medium) {
-      font-size: 2.875rem;
-    }
-  }
-
-  h4 {
-    color: #fefefe;
-    font-weight: 300;
-    font-size: 1.3125rem;
-  }
-
-  .download {
-    margin-top: rem-calc(20);
-  }
+h1, h2, h3{
+  font-family: $secondary-font-family;
+  color: get-color(primary);
+  text-transform: uppercase;
+  margin: 1rem 0 2.5rem 0;
 }
-
 // Intro
 .intro {
+  // @include grid-row();
+p{
   @include grid-row();
-
+  padding: 0 1rem;
+}
   .fp-intro {
     @include breakpoint(small) {
       @include grid-column(12);
@@ -138,6 +34,279 @@
     }
   }
 }
+
+.subscribe-box{
+  @include breakpoint(small only){
+    text-align: center;
+  }
+  h3{
+    font-size: rem-calc(50px);
+    color: $white;
+    margin: 0 0 .5rem 0;
+    @include breakpoint(medium down){
+      font-size: rem-calc(30px);
+    }
+    @include breakpoint(small){
+      font-size: rem-calc(24px);
+    }
+  }
+  p{
+    padding: 0;
+    font-size: rem-calc(30px);
+    @include breakpoint(small only){
+      font-size: rem-calc(16px);
+    }
+  }
+  padding: 1rem 2rem;
+  border-radius: .8rem;
+  background: get-color(secondary);
+  color: $white;
+  label{
+    color: $white;
+  }
+  button{
+    font-family: $secondary-font-family;
+    text-transform: uppercase;
+    border: 1px solid $white;
+    margin: .5rem 0;
+  }
+  @include breakpoint(medium only){
+    border-radius: .8rem 0 0 .8rem;
+  }
+  @include breakpoint(small only){
+    border-radius: .8rem;
+    max-width: calc( 100% - 48px );
+    margin: 0 auto;
+  }
+
+}
+// Page header
+section.container, .container{
+  max-width: $global-width;
+  margin: auto;
+}
+.orbit-container button{
+  background: rgba(0,0,0,0.2);
+  padding: 0.4rem 1.2rem;
+  @include breakpoint(medium down){
+    padding: .2rem;
+  }
+}
+.orbit-img-container{
+  max-height: 400px;
+  overflow: hidden;
+}
+.orbit-caption{
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  font-family: $secondary-font-family;
+  text-shadow: 1px 1px 3px rgba($black,0.8);
+  @include breakpoint(medium down){
+    font-size: 1.2rem;
+  }
+}
+.orbit-cta{
+  font-family: $secondary-font-family;
+  border: 1px solid $white;
+  vertical-align: baseline;
+  margin-left: 1rem;
+  text-shadow: none;
+  box-shadow: 1px 1px 3px rgba($black,0.8);
+}
+h1{
+  font-family: $secondary-font-family;
+  color: get-color(primary);
+}
+.help-intro{
+  margin: 1.5rem 0;
+  .button{
+    vertical-align: baseline;
+    font-family: $secondary-font-family;
+  }
+}
+.tabs-panel.is-active{
+  padding: 2rem;
+  border-top: 2px dotted get-color(primary);
+}
+.intro-flex-container{
+  .infohover{
+    display: none;
+  }
+  .is-active a, .tabs-title a:hover{
+    .accordion-title{
+      color: $grape;
+    }
+    img.infodefault{
+      display: none;
+    }
+    img.infohover{
+      display: block;
+      @include breakpoint(medium down){
+        display: inline-block;
+      }
+      // border: 1px solid red;
+    }
+  }
+  li.is-active::after{
+    @include breakpoint(medium down) {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    display: block;
+    content: ' ';
+    background: #fefefe;
+    border-top: 2px dotted get-color(primary);
+    border-right: 2px dotted get-color(primary);
+    width: 1rem;
+    height: 1rem;
+    margin-left: 50%;
+    transform: translate(-0.5rem, -0.5rem) rotate(-45deg);
+  }
+
+  @include breakpoint(large) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .accordion-content{
+    @include breakpoint(small only) {
+      text-align: center;
+
+    }
+  }
+  li{
+    &:not(.is-active){
+      a{
+        color: get-color(secondary);
+      }
+    }
+    a{
+      height: 100%;
+      text-align: center;
+      font-family: $secondary-font-family;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      line-height: 1.3rem;
+      @include breakpoint(medium down) {
+        font-size: 1.5rem;
+      }
+      @include breakpoint(medium only) {
+        text-align: left;
+      }
+
+      img{
+        @include breakpoint(large) {
+          display: block;
+          margin-bottom: 1.2rem;
+          margin-left: auto;
+          margin-right: auto;
+          // padding: 1rem;
+          max-width: 80%;
+        }
+        @include breakpoint(medium only) {
+          display: inline-block;
+          max-width: rem-calc(90px);
+          margin-right: 1rem;
+        }
+        margin-bottom: .7rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: rem-calc(90px);
+        padding: .2rem;
+      }
+    }
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 16%; // TODO: remove this and do in PHP in style
+  }
+}
+.tabs-panel{
+  font-family: $secondary-font-family;
+  @include breakpoint(large) {
+    font-size: 1.5rem;
+  }
+}
+
+.fullblock{
+  margin-bottom: 2rem;
+  background: #ded9ce;
+  .row{ // TODO: fix fullwidth on inspire sections
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    // max-width: initial;
+  }
+
+}
+
+.itn{
+  padding: 2rem 0 1rem 0;
+  .publisher{
+    margin: 0;
+  }
+  .card{
+    margin:0 auto 3rem auto;
+    a {
+      text-align: center;
+      img{
+          width: 100%;
+      }
+    }
+    p{
+      padding: 0;
+    }
+    @include breakpoint(medium down){
+      p{
+        font-size: rem-calc(14px);
+      }
+    }
+    @include breakpoint(small only){
+      max-width: calc( 100% - 60px );
+    }
+  }
+  li{
+    @include breakpoint(small only){
+      padding: 0;
+    }
+  }
+}
+
+.inspire{
+  h1{
+    margin-bottom: 2rem;
+  }
+  figure a {
+    font-family: $secondary-font-family;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    .infohover{
+      display: none;
+    }
+    &:hover{
+      .infohover{
+        display: block;
+      }
+      .infodefault{
+        display: none;
+      }
+    }
+  }
+  img{
+    margin: 1.2rem auto;
+    max-width: rem-calc(100px);
+    display:block;
+  }
+  figure{
+    margin-bottom: .4rem;
+  }
+  background: #ded9ce;
+  padding: 2rem 0 4rem 0;
+}
+
+
 
 // Section divider
 .section-divider {
@@ -203,4 +372,99 @@
     @include grid-column(12);
     margin-top: 4rem;
   }
+}
+
+.mainpageposts{
+  .year{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #575144;
+  }
+
+  p{
+    padding: 0;
+    @include breakpoint(small only){
+      font-size: rem-calc(14px);
+    }
+  }
+  .eventslabel{
+    margin-bottom: .5rem;
+  }
+  h3{
+    text-transform: none;
+    margin: 0 0 1rem 0;
+    line-height: 1;
+  }
+  article.event{
+    border-bottom: 2px dotted get-color(primary);
+    &:last-child{
+      border-bottom: none;
+    }
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    @include breakpoint(medium down){
+      margin: 0 1rem 1.5rem 1rem;
+    }
+  }
+  .month-container{
+    @include breakpoint(small only){
+      margin:0 auto;
+    }
+  }
+  .month, .day{
+    font-family: $secondary-font-family;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .month{
+    @include breakpoint(large){
+      width: 75%;
+      margin: 0 auto;
+    }
+    @include breakpoint(medium down){
+      font-size: rem-calc(24px);
+    }
+    padding: 0 .5rem .5rem .5rem;
+    font-size: 2rem;
+    color: $dark-gray;
+    border-bottom: 2px solid $medium-gray;
+  }
+  .day{
+    @include breakpoint(medium down){
+      font-size: rem-calc(46px);
+    }
+    padding: .5rem;
+    color: get-color(primary);
+    font-size: 4rem;
+  }
+}
+.mainpage-info{
+  li{
+    font-size: 2rem;
+    margin: 1rem 0;
+    @include breakpoint(medium down){
+      text-align: center;
+      margin: 0 0 1rem 0;
+    }
+  }
+}
+a.contacticon{
+  @include breakpoint(medium down){
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  &:hover{
+    img.contacticon{
+      color: $dark-sage // todo: make this work
+    }
+  }
+}
+.contacticon-container{
+  width: 2rem;
+  margin-right: .4rem;
+}
+img.contacticon{
+  width: 1.2rem;
+  height: auto;
+  margin: 0 auto;
 }
