@@ -108,9 +108,9 @@ W/ ASSETS:
 ###Realign Sizing
   ##MAIN WIDTH (to 1024px)
   ##Navbar/Top
-  - midbar
+  ##midbar
   - front page pieces
-  - footer
+  ##footer
 ##Export assets (going to need help with this one)
   - Icons
   -
@@ -118,7 +118,7 @@ W/ ASSETS:
 
 SIMULTANEOUSLY:
 - Finish front page page-picker w/ full iteration/year etc
-
+- Update front page heads to work with localization etc
 - Build more pages!
 
 
@@ -126,4 +126,13 @@ IMPROVEMENTS IF TIME:
 - Custom fields into ACF
 - Sort events in the events loop by their ACF dates by dumping posts from the query into an arry and then sorting that array iteratively based on the ACF date.
   - Then load that array into the printing loop.
-- Slider bullets outside slider
+- Slider bullets outside slider (LOWEST)
+
+
+
+- part 2 todo
+
+- INTERIOR - PRORGAMs page; PROGRAM page
+- add content to interior program pages as best as possible
+- mixed site message - custom field w/ style
+- prep analytics

@@ -1,0 +1,9 @@
+.entry-content{
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include breakpoint(large) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
