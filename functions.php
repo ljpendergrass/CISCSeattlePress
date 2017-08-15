@@ -54,6 +54,16 @@ require_once( 'library/responsive-images.php' );
 /** Shortcodes */
 require_once( 'library/shortcodes.php' );
 
+/** Programs display */
+require_once( 'library/programs_bycategory.php' );
+
+/** Program layout */
+require_once( 'library/program_layout.php' );
+
+/** Frontpage Message */
+require_once( 'library/frontpage-message.php' );
+
+
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
 

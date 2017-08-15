@@ -25,71 +25,45 @@ function help_func( $atts ) {
     'bar' => 'something else',
   ), $atts );
   $t = get_bloginfo('template_directory');
+  $the_query = new WP_Query(
+    array(
+      'post_type' => 'page',
+      'meta_key' => '_wp_page_template',
+      'meta_value' => 'page-templates/page-program.php'
+    )
+  );
+  $string = ''; // init
+  $string .= "<section class='help-intro container'>
+  <ul class='accordion intro-flex-container' data-responsive-accordion-tabs='tabs small-accordion medium-accordion large-tabs'>";
 
-  return "<section class='help-intro container'>
-  	<!-- using tabs to accordion responsive foundation element  -->
-  	<!-- TODO: add flex style in order to stretch list in reference to # lis in UL -->
-  	<ul class='accordion intro-flex-container' data-responsive-accordion-tabs='tabs small-accordion medium-accordion large-tabs'>
-  	  <li class='accordion-item large-flex-child-auto is-active' data-accordion-item >
-  	    <a href='#' class='accordion-title'>
-  				<img class='infodefault' src='{$t}/assets/images/sections/icon-early-childhood.svg' alt=' '>
-          <img class='infohover' src='{$t}/assets/images/sections/icon-early-childhood-hover.svg' alt=' '>
-  				Early Childhood Education</a>
-  	    <div class='accordion-content' data-tab-content>
-  	      A short description about Early Childhood Education goes here. <a href='#' class='button small'>LEARN MORE</a>
-  	    </div>
-  	  </li>
-  		<li class='accordion-item large-flex-child-auto' data-accordion-item>
-  			<a href='#' class='accordion-title'>
-          <img class='infodefault' src='{$t}/assets/images/sections/icon-youth.svg' alt=' '>
-          <img class='infohover' src='{$t}/assets/images/sections/icon-youth-hover.svg' alt=' '>
-  				Youth Program</a>
-  	    <div class='accordion-content' data-tab-content>
-  				Youth Program description. <a href='#' class='button small'>LEARN MORE</a>
-  	    </div>
-  	  </li>
-  		<li class='accordion-item large-flex-child-auto' data-accordion-item>
-  			<a href='#' class='accordion-title'>
-        <img class='infodefault' src='{$t}/assets/images/sections/icon-family.svg' alt=' '>
-        <img class='infohover' src='{$t}/assets/images/sections/icon-family-hover.svg' alt=' '>
-  				Family Program</a>
-  			<div class='accordion-content' data-tab-content>
-  				Family Program description. <a href='#' class='button small'>LEARN MORE</a>
-  			</div>
-  		</li>
-  		<li class='accordion-item large-flex-child-auto' data-accordion-item>
-  			<a href='#' class='accordion-title'>
-          <img class='infodefault' src='{$t}/assets/images/sections/icon-senior.svg' alt=' '>
-          <img class='infohover' src='{$t}/assets/images/sections/icon-senior-hover.svg' alt=' '>
-  				Senior Program</a>
-  			<div class='accordion-content' data-tab-content>
-  				Senior Program description. <a href='#' class='button small'>LEARN MORE</a>
-  			</div>
-  		</li>
-  		<li class='accordion-item large-flex-child-auto' data-accordion-item>
-  			<a href='#' class='accordion-title'>
-          <img class='infodefault' src='{$t}/assets/images/sections/icon-health.svg' alt=' '>
-          <img class='infohover' src='{$t}/assets/images/sections/icon-health-hover.svg' alt=' '>
-  				Health Care Access</a>
-  			<div class='accordion-content' data-tab-content>
-  				Health Care Access description. <a href='#' class='button small'>LEARN MORE</a>
-  			</div>
-  		</li>
-  		<li class='accordion-item large-flex-child-auto' data-accordion-item>
-  			<a href='#' class='accordion-title'>
-          <img class='infodefault' src='{$t}/assets/images/sections/icon-victim.svg' alt=' '>
-          <img class='infohover' src='{$t}/assets/images/sections/icon-victim-hover.svg' alt=' '>
-  				Crime Victim Advocacy Program</a>
-  			<div class='accordion-content' data-tab-content>
-  				Crime Victim Advocacy description. <a href='#' class='button small'>LEARN MORE</a>
-  			</div>
-  		</li>
-
-
-
-  	</ul>
-  </section>";
- }
+  if ( $the_query->have_posts() ) {
+    $active = "is-active";
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $post_id = get_the_ID();
+        $title = get_the_title();
+        $excerpt = get_field('excerpt');
+        $templatedir = get_bloginfo('template_directory');
+        $activeimg = get_field('icon_image');
+        $inactiveimg = get_field('icon_image_inactive');
+        $permalink = get_the_permalink();
+        // add to string
+        $string .= "<li class='accordion-item large-flex-child-auto {$active}' data-accordion-item >
+        <a href='{$permalink}' class='accordion-title'>
+        <img class='infodefault' src='{$inactiveimg}' alt=' '>
+        <img class='infohover' src='{$activeimg}' alt=' '>
+        {$title}</a>
+        <div class='accordion-content' data-tab-content>
+          <p>{$excerpt} <a href='{$permalink}' class='button small'>LEARN MORE</a></p>
+        </div>
+        </li>
+        ";
+        $active = ""; // no more active tabs
+      }
+  $string .= "</ul></section>";
+  return $string;
+};
+};
  add_shortcode( 'help', 'help_func' );
 // end test
 

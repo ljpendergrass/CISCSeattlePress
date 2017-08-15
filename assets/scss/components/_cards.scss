@@ -27,3 +27,41 @@
 
   }
 }
+
+
+.contents-card{
+  background: $light-grey;
+  padding: 1rem;
+  .contents{
+    li{
+      font-family: $secondary-font-family;
+      color: $grape;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    li:not(:last-child){
+      border-bottom: 2px dotted $grape;
+      padding-bottom: .5rem;
+      margin-bottom: .5rem;
+    }
+  }
+  @include breakpoint(medium up){
+    font-size: rem-calc(20px);
+  }
+}
+
+.contact-card{
+  background: $cloudy-blue;
+
+}
+
+.card-intro{
+  font-family: $secondary-font-family;
+  padding-bottom: 0;
+  color: $grape;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include breakpoint(medium up){
+    font-size: rem-calc(20px);
+  }
+}

@@ -1,0 +1,112 @@
+#page-full-width {
+  @include grid-row();
+  margin-top: 3rem;
+
+  .main-content {
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+  }
+}
+
+.visual-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 33vmin;
+  margin-bottom: 2rem;
+
+  @include breakpoint(medium) {
+    height: rem-calc(200);
+  }
+
+  @include breakpoint(large) {
+    height: rem-calc(320);
+  }
+
+  h1{
+    display: block;
+    color: $white;
+    margin: 0 0 1.5rem 2rem;
+    text-shadow: 3px 3px 3px rgba(0,0,0,.2);
+  }
+  .programicon{
+    width: rem-calc(128);
+    top: rem-calc(64);
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(medium down) {
+      width: rem-calc(96);
+      top: rem-calc(48);
+    }
+  }
+}
+
+.visual-header.header-programs{
+  margin-bottom: 6rem;
+  @include breakpoint(medium down) {
+    margin-bottom: 5rem;
+  }
+}
+.card.program-card{
+  margin-bottom: 2.5rem;
+  h4{
+    color: $grape;
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+    font-weight: bold;
+  }
+  background: $light-grey-two;
+  // max-width: 30%;
+  .button{
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+  }
+
+}
+
+.program-cards{
+  li{
+    min-width: 30%;
+    max-width: rem-calc(360);
+  }
+  list-style: none;
+  margin-top:1.5rem;
+  justify-content:space-around;
+
+}
+
+.program-excerpt{
+  width: 90%;
+  margin: 2rem auto;
+  @include breakpoint(large up) {
+    width: 50%;
+    margin: 3rem auto;
+
+  }
+  color: $black;
+  text-transform: none;
+}
+
+.svg-hr-container{
+  overflow: hidden;
+  margin-bottom: 2rem;
+  path{
+    stroke: #6a2440;
+    stroke-width: 2px;
+  }
+  .svg-centerer{
+    width: 100%;
+    overflow: visible;
+    transform: translateX(50%);
+    svg{
+      display: block;
+      transform: translateX(-50%);
+    }
+  }
+}

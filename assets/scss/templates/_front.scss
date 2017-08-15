@@ -130,6 +130,10 @@ h1{
   border-top: 2px dotted get-color(primary);
 }
 .intro-flex-container{
+  .infohover, .infodefault{
+    width: 96px;
+    height: auto;
+  }
   .infohover{
     display: none;
   }

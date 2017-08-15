@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Front
+Template Name: Front Page
 */
 get_header(); ?>
 
@@ -11,6 +11,7 @@ get_header(); ?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="entry-content">
+				<?php echo frontpage_message(); ?>
 				<?php the_content(); ?>
 			</div>
 			<footer>
