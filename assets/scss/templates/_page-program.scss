@@ -9,10 +9,6 @@
   }
 }
 
-#programs-page{
-
-}
-
 .visual-header{
   display: flex;
   flex-direction: column;
@@ -28,7 +24,7 @@
     height: rem-calc(200);
   }
 
-  @include breakpoint(xlarge) {
+  @include breakpoint(large) {
     height: rem-calc(320);
   }
 
@@ -38,8 +34,25 @@
     margin: 0 0 1.5rem 2rem;
     text-shadow: 3px 3px 3px rgba(0,0,0,.2);
   }
+  .programicon{
+    width: rem-calc(128);
+    top: rem-calc(64);
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(medium down) {
+      width: rem-calc(96);
+      top: rem-calc(48);
+    }
+  }
 }
 
+.visual-header.header-programs{
+  margin-bottom: 6rem;
+  @include breakpoint(medium down) {
+    margin-bottom: 5rem;
+  }
+}
 .card.program-card{
   margin-bottom: 2.5rem;
   h4{
@@ -66,4 +79,34 @@
   margin-top:1.5rem;
   justify-content:space-around;
 
+}
+
+.program-excerpt{
+  width: 90%;
+  margin: 2rem auto;
+  @include breakpoint(large up) {
+    width: 50%;
+    margin: 3rem auto;
+
+  }
+  color: $black;
+  text-transform: none;
+}
+
+.svg-hr-container{
+  overflow: hidden;
+  margin-bottom: 2rem;
+  path{
+    stroke: #6a2440;
+    stroke-width: 2px;
+  }
+  .svg-centerer{
+    width: 100%;
+    overflow: visible;
+    transform: translateX(50%);
+    svg{
+      display: block;
+      transform: translateX(-50%);
+    }
+  }
 }

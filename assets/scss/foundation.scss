@@ -65,7 +65,7 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 
 // Motion UI
 @include motion-ui-transitions;
@@ -97,4 +97,4 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
-@import "templates/page-program-landing.scss";
+@import "templates/page-program.scss";
