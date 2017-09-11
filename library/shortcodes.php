@@ -324,3 +324,20 @@ wp_reset_postdata();
 }
 // Add a shortcode
 add_shortcode('mainpageposts', 'wpb_postsbycategory_front');
+
+
+
+function toc_linkbuilder( $atts ) { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
+  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
+    'title' => ' '
+  ), $atts );
+$escape = urlencode( $a['title'] );
+$title = $a['title'];
+$string = "<a class='toc-header' name='{$escape}'>{$title}</a>"; // init
+return $string;
+
+/* Restore original Post Data */
+wp_reset_postdata();
+}
+// Add a shortcode
+add_shortcode('header_toc_entry', 'toc_linkbuilder');

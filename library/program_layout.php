@@ -10,14 +10,38 @@ function program_layout() { // thank you to http://www.wpbeginner.com/wp-tutoria
 $id = get_the_id();
 $info = get_field("program_contact_info", $id, true);
 
+
+
+
+$query = get_post($id);
+// get raw post html
+$html = apply_filters('the_content', $query->post_content);
+$dom = new DOMDocument;
+$dom->loadHTML($html);
+$xpath = new DOMXPath($dom);
+$hrefs = array();
+$titles = array();
+$nodeList = $xpath->query('//a[@class="toc-header"]');
+foreach ($nodeList as $node) {
+    $hrefs[] = $node->getAttribute('name');
+    $titles[] = $node->textContent;
+}
+$toclist = array();
+
+// build list
+foreach (array_combine($hrefs, $titles) as $href => $title ) {
+  $item = "<li><a href='#{$href}'>{$title}</a>";
+  $toclinks[] = $item;
+};
+
+
 if ($info != '' ) { // if contact info section is not empty
   $string = '<div class="small-12 medium-4 large-4 columns">
-      <!-- <div class="card contents-card">
+      <div class="card contents-card">
         <ul class="contents no-bullet">
-          <li>Section 1</li>
-          <li>Section 2</li>
+          ' . implode("\n",$toclinks) . '
         </ul>
-      </div> todo -->
+      </div>
       <div class="card contact-card">
         <div class="card-section card-intro">
           For further information, please contact:

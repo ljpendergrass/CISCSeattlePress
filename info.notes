@@ -139,6 +139,7 @@ IMPROVEMENTS IF TIME:
 ###Front Page Programs Page Bucket
 - add content to interior program pages as best as possible
 ### mixed site message - custom field w/ style
+-SET MASTER DONATE LINK
 
 - prep analytics
 - Install WPML
@@ -150,15 +151,24 @@ IMPROVEMENTS IF TIME:
 - About us Landing
   - About us board/staff
 
+
 Presentation
 
 - Programs Page Landing
 - Program Page Interior
-- Programs front page tie
+  - Programs front page tie
 - Front Page Message
+- Links to old site
 
 - What's next
+Immediate
   - Final content Pass + Initial Launch
+    - Content needed
+      - Programs: Any #, just need structure
+      - News Items
+      - Upcoming Events
+Later
 - WPML
+  - Table of Contents for programs
   - Get Involved Page(s)
   - About Us Landing/Interior

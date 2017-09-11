@@ -1,8 +1,14 @@
-h1, h2, h3{
+h1, h2{
   font-family: $secondary-font-family;
   color: get-color(primary);
   text-transform: uppercase;
   margin: 1rem 0 2.5rem 0;
+}
+.h3{
+  font-family: $secondary-font-family;
+  color: get-color(primary);
+  text-transform: uppercase;
+  margin: 1rem 0 0.5rem 0;
 }
 // Intro
 .intro {
