@@ -19,7 +19,7 @@ get_header(); ?>
     <?php //todo: add elseif for no thumbnail/featured image
   endif; ?>
       <!-- Excerpt/intro -->
-      <h3 class="program-excerpt text-center"><?php
+      <h3 class="excerpt text-center"><?php
       $id = get_the_id();
       echo get_field("excerpt", $id, false);
       ?></h3>

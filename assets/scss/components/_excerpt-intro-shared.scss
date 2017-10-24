@@ -1,0 +1,11 @@
+.excerpt{
+  width: 90%;
+  margin: 2rem auto;
+  @include breakpoint(large up) {
+    width: 50%;
+    margin: 3rem auto;
+
+  }
+  color: $black;
+  text-transform: none;
+}
