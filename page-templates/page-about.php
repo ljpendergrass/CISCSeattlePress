@@ -33,7 +33,6 @@ get_header(); ?>
       <div class="entry-content row">
         <?php the_content(); ?>
       </div>
-      </div>
 
       <?php do_action( 'foundationpress_page_before_comments' ); ?>
       <?php comments_template(); ?>

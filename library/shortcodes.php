@@ -342,6 +342,8 @@ wp_reset_postdata();
 // Add a shortcode
 add_shortcode('header_toc_entry', 'toc_linkbuilder');
 
+
+// Dotted <hr> shortcode with 2 styles, red and teal
 function dotted_hr( $atts ) {
   $a = shortcode_atts( array(
     'style' => ' '
@@ -361,3 +363,20 @@ $hr = '
 return $hr;
 }
 add_shortcode('dottedhr', 'dotted_hr');
+// End DottedHR
+
+// Naive Fullwidth shortcodes
+function fullwidth_section_begin() {
+  return '
+  </div>
+  <section class="fullblock fullpad">
+    <div class="row">
+  ';
+}
+add_shortcode('fullwidthbegin', 'fullwidth_section_begin');
+
+function fullwidth_section_end() {
+  return '</div></section>';
+}
+add_shortcode('fullwidthend', 'fullwidth_section_end');
+// End fullwidth shortcodes
