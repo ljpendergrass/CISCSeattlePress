@@ -21,10 +21,13 @@ get_header(); ?>
   endif; ?>
 
       <!-- Excerpt/intro -->
-      <h3 class="about-excerpt text-center"><?php
-      $id = get_the_id();
-      echo get_field("excerpt", $id, false);
-      ?></h3>
+      <div class="row about-intro-block">
+        <h3 class="excerpt text-center align-center">
+          <?php $id = get_the_id();
+            echo get_field("excerpt", $id, false);
+          ?>
+        </h3>
+      </div>
 
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
       <div class="entry-content row">
