@@ -341,3 +341,23 @@ wp_reset_postdata();
 }
 // Add a shortcode
 add_shortcode('header_toc_entry', 'toc_linkbuilder');
+
+function dotted_hr( $atts ) {
+  $a = shortcode_atts( array(
+    'style' => ' '
+  ), $atts );
+$styleoptions = array(
+  1 => '#6a2440',
+  2 => '#52a499'
+);
+$hr = '
+<div class="svg-hr-container text-center">
+  <div class="svg-centerer">
+  <svg height="20" width="1024">
+      <path fill-opacity="0" stroke-dasharray="1,6" stroke-linecap="round" d="M0 4 L 1024 4" style="stroke: ' . $styleoptions[$a['style']] . ' "/>
+    </svg>
+  </div>
+</div>';
+return $hr;
+}
+add_shortcode('dottedhr', 'dotted_hr');

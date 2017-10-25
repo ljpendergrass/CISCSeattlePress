@@ -42,21 +42,3 @@
   justify-content:space-around;
 
 }
-
-.svg-hr-container{
-  overflow: hidden;
-  margin-bottom: 2rem;
-  path{
-    stroke: #6a2440;
-    stroke-width: 2px;
-  }
-  .svg-centerer{
-    width: 100%;
-    overflow: visible;
-    transform: translateX(50%);
-    svg{
-      display: block;
-      transform: translateX(-50%);
-    }
-  }
-}
