@@ -1,0 +1,54 @@
+.staff-directory{
+  @include breakpoint(medium down){
+    width: calc(100vw - 2rem);
+  }
+}
+
+.staff-directory, .staff-member{
+  @include breakpoint(small only){
+    text-align: center;
+  }
+}
+
+.staff-directory img, .staff-info{
+  @include breakpoint(medium up){
+    float: left;
+  }
+}
+
+.staff-directory img{
+  width: 140px;
+  margin-right: 1rem;
+  @include breakpoint(small only){
+    margin: .6rem;
+  }
+}
+
+.staff-member{
+  margin-bottom: 2.8rem;
+
+}
+
+.staff{
+  &.title{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: .4rem 0 0 0;
+    @include breakpoint(small only){
+      margin: 0;
+    }
+  }
+  &.name{
+    margin: 0;
+    font-size: 28px;
+  }
+  &.c-name{
+    margin: 0;
+    font-size: 28px;
+  }
+  &.etc{
+    margin-top: .2rem;
+    font-size: 16px;
+  }
+}
