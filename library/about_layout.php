@@ -8,6 +8,8 @@
  */
 function about_layout() { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
 
+$currentpage = get_the_id();
+
 $args = [
     'post_type' => 'page',
     'fields' => 'ids',
@@ -15,17 +17,29 @@ $args = [
     'meta_key' => '_wp_page_template',
     'meta_value' => 'page-templates/page-about-landing.php'
 ];
+
+// Get all posts matching about panding page (only one.)
+// select the only page.
+// get field
 $posts = get_posts( $args );
 $id = $posts[0];
-
 $info = get_field("about_us_side_menu", $id, false); // info section from user
 
+// init
 $contents = array();
 $links = array();
+
+// iterate over selected pages to build contents of link list
 foreach ($info as $page){
   $href = get_permalink($page);
   $title = get_the_title($page);
-  $item = "<li><a href='{$href}'>{$title}</a></li>";
+  // detect if current page
+  if ($page == $currentpage ) {
+    $class = 'class="active-contents-link reference-id-' . $page . ' currentpage-' . $currentpage . '"';
+  } else {
+    $class = 'class="inactive-contents-link reference-id-' . $page . ' currentpage-' . $currentpage . '"';
+  };
+  $item = "<li " . $class . "><a href='{$href}'>{$title}</a></li>";
   $contents[] = $item;
 }
 
