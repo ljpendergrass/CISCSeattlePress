@@ -59,3 +59,23 @@ p.imgcenter{
   width: 100%;
   text-align: center;
 }
+
+.landing-page-menu{
+  margin: 0 auto;
+  li{
+    margin: .25rem 0;
+    @include breakpoint(medium up) {
+      margin: .75rem 0;
+    }
+    a{
+      color: $grape;
+      background: #ded9ce;
+      text-transform: uppercase;
+      h5{
+        font-family: $secondary-font-family;
+        font-weight: bold;
+        margin: .25rem 0;
+      }
+    }
+  }
+}

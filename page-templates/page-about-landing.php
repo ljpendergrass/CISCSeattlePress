@@ -42,6 +42,26 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 
+<ul class="no-bullet row landing-page-menu">
+
+<?php
+$info = get_field("about_us_side_menu", get_the_id(), false); // info section from user
+
+$contents = array();
+
+if ( !empty($info) ) {
+  foreach ($info as $page){
+    $href = get_permalink($page);
+    $title = get_the_title($page);
+    $item = "<li class='small-12 medium-4 large-4 columns'><a class='button expanded' href='{$href}'><h5>{$title}</h5></a></li>";
+    $contents[] = $item;
+  };
+  echo implode("\n", $contents);
+};
+?>
+</ul>
+
+
 </div>
 
 <?php get_footer();
