@@ -19,11 +19,19 @@ get_header(); ?>
 
         </div>
         <h1 class="text-center columns small-12"><?php echo get_the_title(); ?></h1>
-        <!-- <ul class="no-bullet row columns small-12 text-center"> -->
-          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
-          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
-          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
-        <!-- </ul> -->
+        <?php
+        $id = get_the_id();
+        $gi_link_1 = get_field("get_involved_link_1", $id, false);
+        $gi_link_2 = get_field("get_involved_link_2", $id, false);
+        $gi_link_3 = get_field("get_involved_link_3", $id, false);
+        $gi_img_1  = get_field("get_involved_image_1", $id, true);
+        $gi_img_2  = get_field("get_involved_image_2", $id, true);
+        $gi_img_3  = get_field("get_involved_image_3", $id, true);
+
+        if (!empty($gi_link_1) || (!empty($gi_img_1))  ) {  ?><div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href="<?php echo get_permalink($gi_link_1); ?>"> <img src="<?php echo $gi_img_1; ?>"> <h5><?php echo get_the_title($gi_link_1); ?></h5></a></div> <?php };
+        if (!empty($gi_link_2) || (!empty($gi_img_2))  ) {  ?><div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href="<?php echo get_permalink($gi_link_2); ?>"> <img src="<?php echo $gi_img_2; ?>"> <h5><?php echo get_the_title($gi_link_2); ?></h5></a></div> <?php };
+        if (!empty($gi_link_3) || (!empty($gi_img_3))  ) {  ?><div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href="<?php echo get_permalink($gi_link_3); ?>"> <img src="<?php echo $gi_img_3; ?>"> <h5><?php echo get_the_title($gi_link_3); ?></h5></a></div> <?php };
+        ?>
     	</header>
     <?php //todo: add elseif for no thumbnail/featured image
   endif; ?>
