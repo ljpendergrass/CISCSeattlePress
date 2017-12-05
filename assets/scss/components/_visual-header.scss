@@ -37,5 +37,26 @@
 }
 
 .visual-header.about-programs{
-  margin-bottom: 0;
+  // margin-bottom: 0;
+}
+
+.visual-header.about-generic{
+  justify-content: center;
+
+  h1{
+    margin: 0 0 0rem 2rem;
+  }
+
+  background-size: 50%;
+  background-position: 94% 92%;
+  background-repeat: no-repeat;
+  background-color: $grape;
+
+  @include breakpoint(medium) {
+    height: rem-calc(205);
+  }
+
+  @include breakpoint(large) {
+    height: rem-calc(205);
+  }
 }
