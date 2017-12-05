@@ -13,22 +13,22 @@ get_header(); ?>
     // If a featured image is set, insert into layout and use Interchange
     // to select the optimal image size per named media query.
     if ( has_post_thumbnail( $post->ID ) ) : ?>
-    	<header id=" " class="row visual-header about-programs" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
+    	<header id=" " class="row visual-header get-involved-introduction" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
         <!-- Title -->
-        <h1 class="text-center"><?php echo get_the_title(); ?></h1>
+        <div class="columns ">
+
+        </div>
+        <h1 class="text-center columns small-12"><?php echo get_the_title(); ?></h1>
+        <!-- <ul class="no-bullet row columns small-12 text-center"> -->
+          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
+          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
+          <div class="get-involved-link small-5 medium-4 large-3 columns text-center"><a class="button" href=""> <img src="http://via.placeholder.com/350x280"> <h5>Get Involved</h5></a></div>
+        <!-- </ul> -->
     	</header>
     <?php //todo: add elseif for no thumbnail/featured image
   endif; ?>
 
       <!-- Excerpt/intro -->
-      <div class="row about-intro-block">
-        <h3 class="excerpt text-center align-center">
-          <?php $id = get_the_id();
-            echo get_field("excerpt", $id, false);
-          ?>
-        </h3>
-      </div>
-
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
       <div class="entry-content row">
         <?php the_content(); ?>
