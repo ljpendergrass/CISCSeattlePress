@@ -10,7 +10,7 @@
 
 if ( has_post_thumbnail( $post->ID ) ) : ?>
 
-<header id=" " class="row visual-header about-generic" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
+<header id=" " class="row visual-header simple-header" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
 	<!-- Title -->
 	<h1 class="text-left"><?php echo get_the_title(); ?></h1>
 </header>
