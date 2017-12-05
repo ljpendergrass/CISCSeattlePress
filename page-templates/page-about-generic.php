@@ -7,7 +7,7 @@ get_header(); ?>
 <div role="main">
 
   <?php do_action( 'foundationpress_before_content' ); ?>
-<?php get_template_part( 'template-parts/visual-header-about' ); ?>
+<?php get_template_part( 'template-parts/visual-header-simple' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
   <article <?php post_class('main-content row') ?> id="post-<?php the_ID(); ?>">
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
