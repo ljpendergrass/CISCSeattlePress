@@ -159,7 +159,7 @@ function footer_donatebutton_func( $atts ) {
   $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
     'text' => 'something',
   ), $atts );
-  return "<a class='large expanded button donate'>{$a['text']}</a>";
+  return "<a href='" . get_option('donate_link_url') . "' class='large expanded button donate'>{$a['text']}</a>";
  }
  add_shortcode( 'footer_donatebutton', 'footer_donatebutton_func' );
 // end test
