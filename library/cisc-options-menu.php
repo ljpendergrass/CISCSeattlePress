@@ -4,7 +4,7 @@ add_action( 'admin_menu', 'my_plugin_menu' );
 
 /** Step 1. */
 function my_plugin_menu() {
-	add_options_page( 'Donate Link Options', 'Donate Link', 'manage_options', 'donate-link-menu', 'donate_link_menu' );
+	add_options_page( 'CISC Website Options', 'CISC Website Options', 'manage_options', 'donate-link-menu', 'donate_link_menu' );
 }
 
 /** Step 3. */

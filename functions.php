@@ -67,7 +67,7 @@ require_once( 'library/about_layout.php' );
 require_once( 'library/frontpage-message.php' );
 
 /** Frontpage Message */
-require_once( 'library/donate-link-menu.php' );
+require_once( 'library/cisc-options-menu.php' );
 
 
 // Enable shortcodes in text widgets
