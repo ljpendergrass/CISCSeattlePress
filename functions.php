@@ -60,8 +60,14 @@ require_once( 'library/programs_bycategory.php' );
 /** Program layout */
 require_once( 'library/program_layout.php' );
 
+/** About layout */
+require_once( 'library/about_layout.php' );
+
 /** Frontpage Message */
 require_once( 'library/frontpage-message.php' );
+
+/** Frontpage Message */
+require_once( 'library/cisc-options-menu.php' );
 
 
 // Enable shortcodes in text widgets

@@ -88,6 +88,8 @@
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
+@import "components/visual-header.scss";
+@import "components/shared-page-components.scss";
 
 // Templates
 @import "templates/content-pages";
@@ -98,3 +100,5 @@
 @import "templates/page-full-width";
 @import "templates/single-post";
 @import "templates/page-program.scss";
+@import "templates/page-about.scss";
+@import "templates/pages-get-involved.scss";

@@ -159,7 +159,7 @@ function footer_donatebutton_func( $atts ) {
   $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
     'text' => 'something',
   ), $atts );
-  return "<a class='large expanded button donate'>{$a['text']}</a>";
+  return "<a href='" . get_option('donate_link_url') . "' class='large expanded button donate'>{$a['text']}</a>";
  }
  add_shortcode( 'footer_donatebutton', 'footer_donatebutton_func' );
 // end test
@@ -324,3 +324,59 @@ wp_reset_postdata();
 }
 // Add a shortcode
 add_shortcode('mainpageposts', 'wpb_postsbycategory_front');
+
+
+
+function toc_linkbuilder( $atts ) { // thank you to http://www.wpbeginner.com/wp-tutorials/how-to-show-recent-posts-by-category-in-wordpress/
+  $a = shortcode_atts( array( // inputs are taken in; including all of them is optional
+    'title' => ' '
+  ), $atts );
+$escape = urlencode( $a['title'] );
+$title = $a['title'];
+$string = "<a class='toc-header' name='{$escape}'>{$title}</a>"; // init
+return $string;
+
+/* Restore original Post Data */
+wp_reset_postdata();
+}
+// Add a shortcode
+add_shortcode('header_toc_entry', 'toc_linkbuilder');
+
+
+// Dotted <hr> shortcode with 2 styles, red and teal
+function dotted_hr( $atts ) {
+  $a = shortcode_atts( array(
+    'style' => ' '
+  ), $atts );
+$styleoptions = array(
+  1 => '#6a2440',
+  2 => '#52a499'
+);
+$hr = '
+<div class="svg-hr-container text-center">
+  <div class="svg-centerer">
+  <svg height="20" width="1024">
+      <path fill-opacity="0" stroke-dasharray="1,6" stroke-linecap="round" d="M0 4 L 1024 4" style="stroke: ' . $styleoptions[$a['style']] . ' "/>
+    </svg>
+  </div>
+</div>';
+return $hr;
+}
+add_shortcode('dottedhr', 'dotted_hr');
+// End DottedHR
+
+// Naive Fullwidth shortcodes
+function fullwidth_section_begin() {
+  return '
+  </div>
+  <section class="fullblock fullpad">
+    <div class="row">
+  ';
+}
+add_shortcode('fullwidthbegin', 'fullwidth_section_begin');
+
+function fullwidth_section_end() {
+  return '</div></section>';
+}
+add_shortcode('fullwidthend', 'fullwidth_section_end');
+// End fullwidth shortcodes

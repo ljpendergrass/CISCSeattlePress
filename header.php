@@ -67,7 +67,7 @@
 					<!-- insert new seachform -->
 
 					<!-- <li><button type="button" class="button">Search</button></li> -->
-					<li><a class="donate" href="#">DONATE NOW!</a></li>
+					<li><a class="donate" href="<?php echo get_option('donate_link_url'); ?>">DONATE NOW!</a></li>
 				</ul>
 			</div>
 		</nav>
