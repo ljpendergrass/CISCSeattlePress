@@ -55,7 +55,40 @@ get_header(); ?>
   </article>
 <?php endwhile;?>
 
-<?php do_action( 'foundationpress_after_content' ); ?>
+<?php do_action( 'foundationpress_after_content' );
+
+$the_query = new WP_Query(
+  array(
+    'post_type' => 'page',
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'page-templates/page-program.php'
+  )
+);
+
+$string = "<section class='help-intro container'>
+<ul class='no-bullet intro-flex-container'>";
+
+if ( $the_query->have_posts() ) {
+  while ( $the_query->have_posts() ) {
+    $the_query->the_post();
+    $post_id = get_the_ID();
+    $title = get_the_title();
+    $templatedir = get_bloginfo('template_directory');
+    $inactiveimg = get_field('icon_image_inactive');
+    $permalink = get_the_permalink();
+    // add to string
+    $string .= "<li class='text-center'>
+    <a href='{$permalink}' class='text-center'>
+    <img class='infodefault' src='{$inactiveimg}' alt=' '>
+    {$title}</a>
+    </li>
+    ";
+  };
+  echo $string .= "</ul></section>";
+};
+?>
+
+
 
 </div>
 
